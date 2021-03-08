@@ -1,0 +1,56 @@
+{% load static %}
+
+<div class="container-fluid" style="padding: 0;">
+        <div class="row header-1">
+            <div class="col-6 info">
+                <i class="fa fa-phone-alt"></i><p>185-754-8322</p>
+                <i class="fas fa-envelope"></i><p>info@pigeonbiz.com</p>
+            </div>
+            <div class="col-6 info1">
+                <p class="bienvenue">Hey, bienvenue {{ request.user }}!</p>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid" style="padding: 0;">
+        <div class="row header-2">
+            <div class="col-2">
+                <img src="{% static 'bg/logo.png' %}" alt="logo" class="logo">
+            </div>
+            <div class="col-2">
+                <h4>Pigeon Voya</h4>
+            </div>
+            <div class="col-7 navbar">
+                <ul>
+                    <a href="{% url 'accueil' %}"><li>Home</li></a>
+                    <a href="{% url 'pigeon' %}"><li>Pigeon</li></a>
+                    <a href="{% url 'workflow' %}"><li>WorkFlow</li></a>
+                    <a href=""><li>about</li></a>
+                    <a href="../compte/login"><li>login/register</li></a>
+                    <a href="{% url 'quitter' %}"><li>logout</li></a>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid bg-img">
+        <div class="container-lg titre-principal">
+            <p>We help you get things done</p>
+            <h1>PIGEON VOYA</h1>
+            <p class="trait"></p>
+        </div>
+    </div>
+    <div class="container-fluid contenu">
+        <div class="row contact">
+            <div class="col-4">
+                <h5>FIND ME</h5>
+                <p>815 Capwell okaland.CA, 85632</p>
+            </div>
+            <div class="col-4">
+                <h5>CALL ME</h5>
+                <p>185-754-8322</p>
+            </div>
+            <div class="col-4">
+                <h5>EMAIL ME</h5>
+                <p>info@pigeonbiz.com</p>
+            </div>
+        </div>
+    </div>

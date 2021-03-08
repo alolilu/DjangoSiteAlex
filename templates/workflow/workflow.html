@@ -1,0 +1,107 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Login</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+
+	<style>
+        .contenue{
+            margin-top: 10vh;
+            height: 85vh;
+            width: 50%;
+            background-color: #e3e0e000;
+        }
+        .contenue h1{
+            text-align: center;
+            padding-top: 25px;
+            padding-bottom: 25px;
+        }
+        #form{
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            text-align: center;
+            margin: 10px;
+            margin-left: 155px;
+            border-radius: 7px;
+        }
+        .formulaire{
+            background-color: #d0d0d0;
+            width: 70%;
+            padding-bottom: 5vh;
+        }
+        .text{
+            display: flex;
+            float: right;
+            font-family: 'Roboto Slab', serif;
+            font-size: 1.3em;
+            margin: 20px 0px 0px 150px;
+        }
+        .submit{
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            margin: 20px;
+            width: 50%;
+            margin-left: 160px;
+            border-radius: 15px;
+            padding: 5px;
+        }
+        #file{
+            display: flex;
+            justify-content: center;
+            font-family: 'Roboto Slab', serif;
+            font-size: 1.3em;
+            margin: 20px 0px 0px 230px;
+        }
+        #form1{
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            padding-left: 150px;
+            text-align: center;
+            margin: 30px;
+        }
+
+    </style>
+
+    <form enctype="multipart/form-data" action="" method="post">
+
+        {% csrf_token %}
+        <div class="container contenue">
+            <h1>Send Your Folder</h1>
+                <div class="container-fluid formulaire">
+                    <div class="row">
+                        <label name="f_name" class="text" for="fname">First name :</label>
+                        <input name="f_name" type="text" id="form">
+                    </div>
+                    <div class="row">
+                        <label name="s_name" class="text" for="sname">Seconde name :</label>
+                        <input name="s_name" type="text" id="form">
+                    </div>
+                    <div class="row">
+                        <label name="mail" class="text" for="mail">E-mail :</label>
+                        <input name="mail" type="email" id="form">
+                    </div>
+                    <div class="row">
+                        <label name="files" class="text" id="file" for="files">Your Folder :</label>
+                    </div>
+                    <div class="row">
+                        <input name="file" type="file" id="form1">
+                    </div>
+                    <div class="row">
+                        <input type="submit" value="Send it to US" class="submit">
+                    </div>
+                </div>
+        </div>
+    </form>
+</body>
+</html>
+
+

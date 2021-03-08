@@ -1,0 +1,228 @@
+{% extends 'main.html' %}
+
+{% block contenu %}
+
+    {% load static %}
+
+
+    <style>
+
+    .home h3{
+        text-align: center;
+        margin: 60px 0px 60px;
+        font-family: 'Roboto Slab', serif;
+        text-transform: uppercase;
+        font-weight: 600;
+    }
+
+    #pigeon{
+        display: flex;
+        justify-content: center;
+        margin: 10px;
+    }
+
+    .nos_pigeon h5{
+        text-align: center;
+        margin: 25px;
+        font-family: 'Roboto Slab', serif;
+    }
+
+    .nos_pigeon p{
+        text-align: center;
+    }
+
+    .shadow{
+        background-color: orange;
+        margin: 5px;
+    }
+
+    .nos_images_de_pigeons_1{
+        height: 300px;
+        width: 500px;
+        margin: 60px;
+        float: right;
+        box-shadow: 0px 0px 10px 10px #626262;
+        transform: scale(1);
+        transition: 0.3s ease-in-out;
+    }
+
+    img{
+        max-width: 100%;
+    }
+
+    .nos_images_de_pigeons_2{
+        height: 300px;
+        width: 500px;
+        margin: 60px;
+        float: left;
+        box-shadow: 0px 0px 10px 10px #626262;
+        transform: scale(1);
+        transition: 0.3s ease-in-out;
+    }
+
+    .nos_images_de_pigeons_3{
+        height: 300px;
+        width: 500px;
+        margin: 60px;
+        float: right;
+        box-shadow: 0px 0px 10px 10px #626262;
+        transform: scale(1);
+        transition: 0.3s ease-in-out;
+    }
+
+    .nos_images_de_pigeons_1:hover{
+        transform: scale(1.2);
+        transition: 0.4s ease-in-out;
+    }
+
+    .nos_images_de_pigeons_2:hover{
+        transform: scale(1.2);
+        transition: 0.4s ease-in-out;
+    }
+
+    .nos_images_de_pigeons_3:hover{
+        transform: scale(1.2);
+        transition: 0.4s ease-in-out;
+    }
+
+    .les_images h5{
+        margin: 50px;
+        float: center;
+        line-height: 15;
+    }
+    </style>
+
+    <div class="container-fluid home">
+        <h3>Les 3 grands types de pigeons</h3>
+            <div class="container-md">
+                <div class="row nos_pigeon">
+                    <div class="col-sm shadow">
+                        <i class="fas fa-dove fa-4x" id="pigeon"></i>
+                        <h5>L'intélligence et l'orientation</h5>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum voluptatum enim deleniti voluptas dolore perferendis inventore esse obcaecati, rerum eum sint velit aliquam mollitia itaque voluptatem quidem dignissimos sunt fugiat vel ut tenetur. Dolorum dolore, corporis saepe ullam rem expedita!</p>
+                    </div>
+                    <div class="col-sm shadow">
+                        <i class="fas fa-dove fa-4x" id="pigeon"></i>
+                        <h5>Un corp d'acier et de ferre</h5>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum voluptatum enim deleniti voluptas dolore perferendis inventore esse obcaecati, rerum eum sint velit aliquam mollitia itaque voluptatem quidem dignissimos sunt fugiat vel ut tenetur. Dolorum dolore, corporis saepe ullam rem expedita!</p>
+                    </div>
+                    <div class="col-sm shadow">
+                        <i class="fas fa-dove fa-4x" id="pigeon"></i>
+                        <h5>une rapidité incroyable</h5>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum voluptatum enim deleniti voluptas dolore perferendis inventore esse obcaecati, rerum eum sint velit aliquam mollitia itaque voluptatem quidem dignissimos sunt fugiat vel ut tenetur. Dolorum dolore</p>
+                    </div>
+                </div>
+            </div>
+    </div>
+
+    <div class="container-fluid home">
+        <h2 style="margin: 60px; text-align: center; font-family:'Roboto Slab', serif;">Quelques types de pigeons</h2>
+            <div class="container">
+                <div class="row les_images">
+                    <div class="col-sm-6 align-self-start">
+                        <img src= "{% static 'bg/1.jpg' %}" alt="" class="nos_images_de_pigeons_1">
+                    </div>
+                    <div class="col-sm-6 align-self-center">
+                        <h2>Lorem, ipsum dolor.</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 align-self-center">
+                        <h2>Lorem, ipsum dolor.</h2>
+                    </div>
+                    <div class="col-sm-6 align-self-center">
+                        <img src="{% static 'bg/2.jpg' %}" alt="" class="nos_images_de_pigeons_2">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 align-self-end">
+                        <img src="{% static 'bg/3.jpg' %}" alt="" class="nos_images_de_pigeons_3">
+                    </div>
+                    <div class="col-sm-6 align-self-center">
+                        <h2>Lorem, ipsum dolor.</h2>
+                    </div>
+                </div>
+                <div class="row les_images">
+                    <div class="col-sm-6 align-self-center">
+                        <h2>Lorem, ipsum dolor.</h2>
+                    </div>
+                    <div class="col-sm-6 align-self-start">
+                        <img src="{% static 'bg/4.jpg' %}" alt="" class="nos_images_de_pigeons_2">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 align-self-center">
+                        <img src="{% static 'bg/5.jpg' %}" alt="" class="nos_images_de_pigeons_1">
+                    </div>
+                    <div class="col-sm-6 align-self-center">
+                        <h2>Lorem, ipsum dolor.</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 align-self-center">
+                        <h2>Lorem, ipsum dolor.</h2>
+                    </div>
+                    <div class="col-sm-6 align-self-end">
+                        <img src="{% static 'bg/6.jpg' %}" alt="" class="nos_images_de_pigeons_2">
+                    </div>
+                </div>
+                <div class="row les_images">
+                    <div class="col-sm-6 align-self-start">
+                        <img src="{% static 'bg/7.jpg' %}" alt="" class="nos_images_de_pigeons_1">
+                    </div>
+                    <div class="col-sm-6 align-self-center">
+                        <h2>Lorem, ipsum dolor.</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 align-self-center">
+                        <h2>Lorem, ipsum dolor.</h2>
+                    </div>
+                    <div class="col-sm-6 align-self-center">
+                        <img src="{% static 'bg/8.jpg' %}" alt="" class="nos_images_de_pigeons_2">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 align-self-end">
+                        <img src="{% static 'bg/9.jpg' %}" alt="" class="nos_images_de_pigeons_3">
+                    </div>
+                    <div class="col-sm-6 align-self-center">
+                        <h2>Lorem, ipsum dolor.</h2>
+                    </div>
+                </div>
+                <div class="row les_images">
+                    <div class="col-sm-6 align-self-center">
+                        <h2>Lorem, ipsum dolor.</h2>
+                    </div>
+                    <div class="col-sm-6 align-self-start">
+                        <img src="{% static 'bg/10.jpg' %}" alt="" class="nos_images_de_pigeons_2">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 align-self-center">
+                        <img src="{% static 'bg/11.jpg' %}" alt="" class="nos_images_de_pigeons_3">
+                    </div>
+                    <div class="col-sm-6 align-self-center">
+                        <h2>Lorem, ipsum dolor.</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 align-self-center">
+                        <h2>Lorem, ipsum dolor.</h2>
+                    </div>
+                    <div class="col-sm-6 align-self-end">
+                        <img src="{% static 'bg/12.jpg' %}" alt="" class="nos_images_de_pigeons_2">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 align-self-end">
+                        <img src="{% static 'bg/13.jpg' %}" alt="" class="nos_images_de_pigeons_3">
+                    </div>
+                    <div class="col-sm-6 align-self-center">
+                        <h2>Lorem, ipsum dolor.</h2>
+                    </div>
+                </div>
+            </div>
+    </div>
+
+    {% endblock %}

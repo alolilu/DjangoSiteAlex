@@ -1,0 +1,72 @@
+{% extends 'main.html' %}
+
+{% block contenu %}
+
+    {% load static %}
+
+    <style>
+        .label_titre{
+            margin: 150px 20px 20px 20px;
+            color: orange;
+            font-weight: 600;
+            font-size: 1.5em;
+        }
+        .label_description{
+            color: orange;
+            font-weight: 600;
+            font-size: 1.5em;
+            margin: 20px;
+        }
+        .label_img{
+            color: orange;
+            font-weight: 600;
+            font-size: 1.5em;
+            margin: 20px;
+        }
+        .input_title{
+            padding-right: 150px;
+            margin-right: 250px;
+        }
+        .input_description{
+            padding-right: 20vw;
+        }
+        .contenu2{
+            display: flex;
+            justify-content: center;
+            background-color: black;
+        }
+        .input_submit{
+            background-color: orange;
+            padding: 10px 15px 10px 15px;
+            display: flex;
+            text-align: center;
+            font-weight: 600;
+            margin-left: 300px;
+            margin-top: 35px;
+        }
+    </style>
+
+   <div class="container-xs contenu2" style="height: 500px;">
+        <h1 style="text-align: center; margin: 30px; position: absolute; color: white; text-transform: uppercase;">ajouter un pigeon</h1>
+            <form action="" method="POST">
+                {% csrf_token %}
+                    <div class="col">
+                        <label for="Title" class="label_titre">Titre :</label>
+                        <input type="text" name="pigeon_title" class="input_title">
+                    </div>
+                    <div class="col">
+                        <label for="Title" class="label_description">Description :</label>
+                        <input type="text" name="pigeon_description" class="input_description">
+                    </div>
+                    <div class="col">
+                        <label for="Title" class="label_img">Image :</label>
+                        <input type="file" name="pigeon_img" class="input_img">
+                    </div>
+                    <div class="col">
+                        <input type="submit" name="pigeon_submit" class="input_submit" value="enregistrer">
+                    </div>
+            </form>
+            
+    </div>
+
+{% endblock %}
