@@ -4,22 +4,26 @@
 <html>
 
 <head>
-	<title>Login</title>
+	<title>Send your folder</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 
 	<style>
+        body{
+            background-color: black;  
+        }
         .contenue{
             margin-top: 10vh;
             height: 85vh;
             width: 50%;
-            background-color: #e3e0e000;
         }
         .contenue h1{
             text-align: center;
             padding-top: 25px;
             padding-bottom: 25px;
+            color: white;
+            text-transform: uppercase;
         }
         #form{
             width: 50%;
@@ -32,7 +36,7 @@
             border-radius: 7px;
         }
         .formulaire{
-            background-color: #d0d0d0;
+            background-color: orange;
             width: 70%;
             padding-bottom: 5vh;
         }
@@ -42,6 +46,7 @@
             font-family: 'Roboto Slab', serif;
             font-size: 1.3em;
             margin: 20px 0px 0px 150px;
+            font-weight: 700;
         }
         .submit{
             display: flex;
@@ -71,9 +76,10 @@
 
     </style>
 
-    <form enctype="multipart/form-data" action="" method="post">
+    <form enctype="multipart/form-data" action="" method="POST">
 
         {% csrf_token %}
+        {{files}}
         <div class="container contenue">
             <h1>Send Your Folder</h1>
                 <div class="container-fluid formulaire">
@@ -94,6 +100,7 @@
                     </div>
                     <div class="row">
                         <input name="file" type="file" id="form1">
+                        <a href=""></a>
                     </div>
                     <div class="row">
                         <input type="submit" value="Send it to US" class="submit">

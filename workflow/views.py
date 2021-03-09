@@ -1,9 +1,10 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from django.core.mail import send_mail
 from django.conf import settings
 from django.http import HttpResponse
+from .forms import *
 
 
 # Create your views here.
@@ -15,16 +16,15 @@ def workflow(request):
         f_name = request.POST.get('f_name')
         s_name = request.POST.get('s_name')
         mail = request.POST.get('mail')
-
-        file = request.FILES['file']
        
 
         data = {
             'f_name': f_name,
             's_name': s_name,
             'mail': mail,
-            'file': file,
+            'files': Files,
         }
+
         message = '''
         New message: {}
         
@@ -38,10 +38,22 @@ def workflow(request):
         His folder: {}
         
         From: {}
-        '''.format(data['f_name'], data['file'], data['mail'])
+        '''.format(data['f_name'], data['files'], data['mail'])
         send_mail(data['f_name'], message, '', ['alexis.fredriksen5@gmail.com'])
 
     return render(request, 'workflow/workflow.html', {})
+
+def newfiles(request) :
+
+    form = NewFile()
+    if request.method=='POST':
+        form = NewFile(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('login')
+
+    context = {'form':form}
+    return render(request, 'workflow/workflow.html', context) 
 
 
 @login_required(login_url='login')
