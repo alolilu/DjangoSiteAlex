@@ -118,15 +118,17 @@
                     </div>
                     <div class="row">
                         <label name="files" class="text" for="files">Your verdict</label>
-                        <select name="verdict" id="choix">
-                            <option value="Dossier accepté">Dossier accepté</option>
-                            <option value="Dossier refusé">Dossier refusé</option>
-                            <option value="Dossier en attente">Dossier en attente</option>
-                        </select>
+                        {% for Files in Files %}
+                        <p class="text1">{{ Files.verdict }}</p>
+                        {% endfor %}
+                    </div>
+                    <div class="row">
+                        <label name="comment" class="text" for="comment">Comment :</label>
+                        <input name="comment" type="text" id="form">
                     </div>
                     <div class="row">
                         <div class="col">
-                            <input type="submit" value="Send your verdict" class="submit">
+                            <input type="submit" value="Send for close the folder" class="submit">
                         </div>
                     </div>
                 </div>

@@ -5,5 +5,6 @@ from . import views
 urlpatterns = [
     path('workflow', views.workflow, name='workflow'),
     path('workrep', views.workrep, name='workrep'),
-    path('newfile', views.newfiles, name='newfile')
+    path('newfile', views.newfiles, name='newfile'),
+    path('final', views.workfinal, name='final'),
 ]

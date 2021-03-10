@@ -84,5 +84,32 @@ def workrep(request):
     return render(request, 'workflow/workrep.html', contextt)
 
 
+def workfinal(request):
+    Files=File.objects.all()
+    contextt={'Files':Files}
+
+    if request.method == 'POST':
+        comment = request.POST.get('comment')
+
+        data2 = {
+            'comment': comment,
+        }
+
+        message = '''
+        
+        Hello,
+        Here the comment to the folder of our customer : 
+        My comment : {}
+        if you want to return on site :
+        http://127.0.0.1:8000/
+        
+        Have nice day
+        
+        '''.format(data2['comment'])
+        send_mail(data2['comment'], message, '', ['alexis.fredriksen5@gmail.com'])
+
+    return render(request, 'workflow/final.html', contextt)
+
+
 
 

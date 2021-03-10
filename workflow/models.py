@@ -6,4 +6,5 @@ class File(models.Model):
     f_name = models.CharField(max_length=30)
     s_name = models.CharField(max_length=30)
     mail = models.CharField(max_length=30)
+    verdict = models.CharField(max_length=30)
     File = models.FileField(blank=True)
