@@ -136,10 +136,12 @@ STATICFILES_DIRS = [
     BASE_DIR / "static"
 ]
 
-
+MEDIA_ROOT = 'static/fichier'
 
 STATIC_URL = '/static/css/'
 
 STATIC_URL = '/static/'
 
 MEDIA_URL = '/bg/'
+
+

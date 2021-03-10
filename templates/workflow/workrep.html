@@ -54,6 +54,7 @@
             font-family: 'Roboto Slab', serif;
             font-size: 1.3em;
             margin: 30px 0px 30px 30px;
+            color: rgb(114, 114, 114);
         }
         .submit{
             display: flex;
@@ -93,19 +94,27 @@
                 <div class="container-fluid formulaire">
                     <div class="row">
                         <label name="f_name" class="text" for="fname">First name :</label>
-                        <p class="text1">{{s_name}}</p>
+                        {% for Files in Files %}
+                        <p class="text1">{{ Files.f_name }}</p>
+                        {% endfor %}
                     </div>
                     <div class="row">
                         <label name="s_name" class="text" for="sname">Seconde name :</label>
-                        <p class="text1">Fredriksen{{bonjour}}</p>
+                        {% for Files in Files %}
+                        <p class="text1">{{ Files.s_name }}</p>
+                        {% endfor %}
                     </div>
                     <div class="row">
                         <label name="mail" class="text" for="mail">E-mail :</label>
-                        <p class="text1">alexis.fredriksen5@gmail.com{{mail}}</p>
+                        {% for Files in Files %}
+                        <p class="text1">{{ Files.mail }}</p>
+                        {% endfor %}
                     </div>
                     <div class="row">
                         <label name="files" class="text" for="files">Files:</label>
-                        <p class="text1">Image.jpg{Files}</p>
+                        {% for Files in Files %}
+                        <p class="text1">{{ Files.File }}</p>
+                        {% endfor %}
                     </div>
                     <div class="row">
                         <label name="files" class="text" for="files">Your verdict</label>

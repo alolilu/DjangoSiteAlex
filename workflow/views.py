@@ -5,6 +5,7 @@ from django.core.mail import send_mail
 from django.conf import settings
 from django.http import HttpResponse
 from .forms import *
+from .models import File
 
 
 # Create your views here.
@@ -16,13 +17,14 @@ def workflow(request):
         f_name = request.POST.get('f_name')
         s_name = request.POST.get('s_name')
         mail = request.POST.get('mail')
-       
+
+        file = request.FILES['file']
 
         data = {
             'f_name': f_name,
             's_name': s_name,
             'mail': mail,
-            'files': Files,
+            'file': file,
         }
 
         message = '''
@@ -38,27 +40,27 @@ def workflow(request):
         His folder: {}
         
         From: {}
-        '''.format(data['f_name'], data['files'], data['mail'])
+        '''.format(data['f_name'], data['file'], data['mail'])
         send_mail(data['f_name'], message, '', ['alexis.fredriksen5@gmail.com'])
 
     return render(request, 'workflow/workflow.html', {})
 
 def newfiles(request) :
+    form = NewFile(request.POST or None)
+    if request.method == 'POST':
+        form.save()
+        return redirect('pigeon')
 
-    form = NewFile()
-    if request.method=='POST':
-        form = NewFile(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('login')
-
-    context = {'form':form}
+    context = {'form': form}
     return render(request, 'workflow/workflow.html', context) 
 
 
 @login_required(login_url='login')
 
 def workrep(request):
+    Files=File.objects.all()
+    contextt={'Files':Files}
+
     if request.method == 'POST':
         verdict = request.POST.get('verdict')
 
@@ -79,7 +81,7 @@ def workrep(request):
         '''.format(data1['verdict'])
         send_mail(data1['verdict'], message, '', ['alexis.fredriksen5@gmail.com'])
 
-    return render(request, 'workflow/workrep.html',{})
+    return render(request, 'workflow/workrep.html', contextt)
 
 
 

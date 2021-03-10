@@ -1,11 +1,11 @@
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
-from .models import Files
+from .models import File
 from django.forms import ModelForm
 
 class NewFile(ModelForm):
     class Meta:
-        model = Files
+        model = File
         fields = '__all__'
 
 
