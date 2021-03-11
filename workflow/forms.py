@@ -3,10 +3,14 @@ from django.contrib.auth.models import User
 from .models import File
 from django.forms import ModelForm
 
+
 class NewFile(ModelForm):
     class Meta:
         model = File
         fields = '__all__'
+
+
+
 
 
 

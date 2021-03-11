@@ -94,27 +94,19 @@
                 <div class="container-fluid formulaire">
                     <div class="row">
                         <label name="f_name" class="text" for="fname">First name :</label>
-                        {% for Files in Files %}
-                        <p class="text1">{{ Files.f_name }}</p>
-                        {% endfor %}
+                        <p class="text1">{{ Files.f_name }}</p> 
                     </div>
                     <div class="row">
                         <label name="s_name" class="text" for="sname">Seconde name :</label>
-                        {% for Files in Files %}
                         <p class="text1">{{ Files.s_name }}</p>
-                        {% endfor %}
                     </div>
                     <div class="row">
                         <label name="mail" class="text" for="mail">E-mail :</label>
-                        {% for Files in Files %}
                         <p class="text1">{{ Files.mail }}</p>
-                        {% endfor %}
                     </div>
                     <div class="row">
                         <label name="files" class="text" for="files">Files:</label>
-                        {% for Files in Files %}
                         <p class="text1">{{ Files.File }}</p>
-                        {% endfor %}
                     </div>
                     <div class="row">
                         <label name="files" class="text" for="files">Your verdict</label>

@@ -12,53 +12,49 @@ from .models import File
 @login_required(login_url='login')
 
 def workflow(request):
-
-    if request.method == 'POST':
-        f_name = request.POST.get('f_name')
-        s_name = request.POST.get('s_name')
-        mail = request.POST.get('mail')
-
-        file = request.FILES['file']
-
-        data = {
-            'f_name': f_name,
-            's_name': s_name,
-            'mail': mail,
-            'file': file,
-        }
-
-        message = '''
-        New message: {}
-        
-        Hello,
-        Here the message with a folder of our customer.
-        Thank you for taking care of it.
-        Click on the link for send your verdict:
-        http://127.0.0.1:8000/workflow/workrep
-        Have nice day
-        
-        His folder: {}
-        
-        From: {}
-        '''.format(data['f_name'], data['file'], data['mail'])
-        send_mail(data['f_name'], message, '', ['alexis.fredriksen5@gmail.com'])
-
-    return render(request, 'workflow/workflow.html', {})
-
-def newfiles(request) :
     form = NewFile(request.POST or None)
     if request.method == 'POST':
         form.save()
-        return redirect('pigeon')
+
+        if request.method == 'POST':
+            f_name = request.POST.get('f_name')
+            s_name = request.POST.get('s_name')
+            mail = request.POST.get('mail')
+
+            file = request.FILES['file']
+
+            data = {
+                'f_name': f_name,
+                's_name': s_name,
+                'mail': mail,
+                'file': file,
+            }
+
+            message = '''
+                New message: {}
+
+                Hello,
+                Here the message with a folder of our customer.
+                Thank you for taking care of it.
+                Click on the link for send your verdict:
+                http://127.0.0.1:8000/workflow/workrep
+                Have nice day
+
+                His folder: {}
+
+                From: {}
+                '''.format(data['f_name'], data['file'], data['mail'])
+            send_mail(data['f_name'], message, '', ['alexis.fredriksen5@gmail.com'])
 
     context = {'form': form}
-    return render(request, 'workflow/workflow.html', context) 
 
+    return render(request, 'workflow/workflow.html', context)
 
 @login_required(login_url='login')
 
+
 def workrep(request):
-    Files=File.objects.all()
+    Files=File.objects.latest('id')
     contextt={'Files':Files}
 
     if request.method == 'POST':
@@ -74,7 +70,7 @@ def workrep(request):
         Here the answer about the folder of our customer.
         His verdict : {}
         if you want to return on site :
-        http://127.0.0.1:8000/
+        http://127.0.0.1:8000/workflow/final
         
         Have nice day
         
