@@ -4,7 +4,7 @@
 <html>
 
 <head>
-	<title>treatment</title>
+	<title>treatment Final</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
@@ -94,33 +94,23 @@
                 <div class="container-fluid formulaire">
                     <div class="row">
                         <label name="f_name" class="text" for="fname">First name :</label>
-                        {% for Files in Files %}
                         <p class="text1">{{ Files.f_name }}</p>
-                        {% endfor %}
                     </div>
                     <div class="row">
                         <label name="s_name" class="text" for="sname">Seconde name :</label>
-                        {% for Files in Files %}
                         <p class="text1">{{ Files.s_name }}</p>
-                        {% endfor %}
                     </div>
                     <div class="row">
                         <label name="mail" class="text" for="mail">E-mail :</label>
-                        {% for Files in Files %}
                         <p class="text1">{{ Files.mail }}</p>
-                        {% endfor %}
                     </div>
                     <div class="row">
                         <label name="files" class="text" for="files">Files :</label>
-                        {% for Files in Files %}
                         <p class="text1">{{ Files.File }}</p>
-                        {% endfor %}
                     </div>
                     <div class="row">
                         <label name="files" class="text" for="files">Your verdict :</label>
-                        {% for Files in Files %}
                         <p class="text1">{{ Files.verdict }}</p>
-                        {% endfor %}
                     </div>
                     <div class="row">
                         <label name="comment" class="text" for="comment">Comment :</label>

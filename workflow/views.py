@@ -20,7 +20,6 @@ def workflow(request):
             f_name = request.POST.get('f_name')
             s_name = request.POST.get('s_name')
             mail = request.POST.get('mail')
-
             file = request.FILES['file']
 
             data = {
@@ -31,7 +30,7 @@ def workflow(request):
             }
 
             message = '''
-                New message: {}
+                New customer: {} {}
 
                 Hello,
                 Here the message with a folder of our customer.
@@ -43,7 +42,7 @@ def workflow(request):
                 His folder: {}
 
                 From: {}
-                '''.format(data['f_name'], data['file'], data['mail'])
+                '''.format(data['f_name'],data['s_name'], data['file'], data['mail'])
             send_mail(data['f_name'], message, '', ['alexis.fredriksen5@gmail.com'])
 
     context = {'form': form}
@@ -81,7 +80,7 @@ def workrep(request):
 
 
 def workfinal(request):
-    Files=File.objects.all()
+    Files=File.objects.latest('id')
     contextt={'Files':Files}
 
     if request.method == 'POST':

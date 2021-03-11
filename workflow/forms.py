@@ -7,7 +7,7 @@ from django.forms import ModelForm
 class NewFile(ModelForm):
     class Meta:
         model = File
-        fields = '__all__'
+        fields = ['s_name', 'f_name', 'mail']
 
 
 

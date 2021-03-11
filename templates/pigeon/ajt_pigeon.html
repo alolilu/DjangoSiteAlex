@@ -1,0 +1,34 @@
+{% extends 'main.html' %}
+
+{% block contenu %}
+
+    {% load static %}
+
+    <form enctype="multipart/form-data" action="" method="POST">
+
+        {% csrf_token %}
+        <div class="container contenue">
+            <h1>Ajouter un pigeon</h1>
+                <div class="container-fluid formulaire">
+                    <div class="row">
+                        <label name="nom_pigeon" class="text" for="fname">Nom du pigeon</label>
+                        <input name="nom_pigeon" type="text" id="form">
+                    </div>
+                    <div class="row">
+                        <label name="des_pigeon" class="text" for="sname">Description du pigeon</label>
+                        <input name="des_pigeon" type="text" id="form">
+                    </div>
+                    <div class="row">
+                        <label name="img_pigeon" class="text" id="file" for="img_pigeon">Image du pigeon</label>
+                    </div>
+                    <div class="row">
+                        <input name="img_pigeon" type="file" id="form1">
+                    </div>
+                    <div class="row">
+                        <input type="submit" value="Ajouter le pigeon" class="submit">
+                    </div>
+                </div>
+        </div>
+    </form>
+
+    {% endblock %}

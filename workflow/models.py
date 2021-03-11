@@ -8,5 +8,6 @@ class File(models.Model):
     s_name = models.CharField(max_length=30)
     mail = models.CharField(max_length=30)
     File = models.FileField(blank=True)
+    verdict = models.CharField(max_length=30)
 
 
