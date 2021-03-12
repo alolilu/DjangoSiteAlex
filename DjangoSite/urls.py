@@ -24,4 +24,5 @@ urlpatterns = [
     path('compte/', include('compte.urls')),
     path('workflow/', include('workflow.urls')),
     path('pigeon/', include('pigeon.urls')),
+    path('dossier/', include('DossierVerifier.urls')),
 ]

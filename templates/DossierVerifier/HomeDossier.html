@@ -1,0 +1,352 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Send your folder</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    <script type="text/javascript">
+
+        // const pages = document.getElementsByClassName('.page')
+        // const header = document.querySelector("header")
+        // const nbPages = pages.length // nombre de page du formulaire
+        // let pageActive = 1
+
+        // // console.log(nbPages)
+
+        // window.onload = () => {
+        //     // on affiche la premiere page du formulaire
+        //     document.querySelector(".page").style.display = "initial"
+
+        //     //on afiche les numéro des pages
+        //     //on parcour la listes des pages 
+        //     pages.forEach((page, HomeDossier) => {
+        //         //on crée l'élement de la page
+        //         let element = document.createElement("div")
+        //         element .classList.add("page-num")
+        //         if(pageActive === HomeDossier + 1){
+        //             element.classList.add("active")
+        //         }
+        //         element.innerHTML = HomeDossier + 1
+        //         header.appendChild(element)
+        //     })
+        // }
+
+    </script>
+</head>
+
+<style>
+    .home{
+        height: 100vh;
+        width: 100vw;
+        font-family: 'Oswald', sans-serif;
+    }
+    .ajout_dossier{
+        display: block;
+        background-color: rgba(0, 0, 255, 0);
+        height: 70vh;
+        width: 24vh;
+        margin: 70px 0px 0px 30px;
+        position: relative;
+        justify-content: center;
+        box-shadow: 3px 4px 11px -3px #000000;  
+    }
+    .ajout_dossier h3{
+        text-align: center;
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 1.5em;
+        display: flex;
+        margin: 20px 10px 0px 10px;
+        position: absolute;
+    }
+    .premier_dossier{
+        display: flex;
+        justify-content: center;
+        text-align: center;
+    }
+    .premier_dossier ul{
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        list-style: none;
+        padding: 0;
+        padding-top: 100px !important;
+    }
+    .premier_dossier ul li a{
+        text-decoration: none;
+        color: orange;
+        padding: 15px 35px 15px 28px;
+        font-size: 1.2em;
+        transition: 0.3s;
+        font-weight: 500;
+    }
+    .premier_dossier ul li a:hover{
+        background-color: rgba(170, 170, 170, 0.39);
+        transition: 0.3s;
+        box-sizing: 15px;
+    }
+    .votre-dossier{
+        display: flex;
+        justify-content: center;
+        margin: 70px 0px 0px 10px;
+        margin-left: 10px;
+        box-shadow: 3px 4px 11px -3px #000000;
+        height: 85vh;
+    }
+    .votre-dossier h1{
+        text-transform: uppercase;
+        padding-top: 20px;
+        position: absolute;
+        border-bottom: 2px solid rgb(117, 117, 117);
+    }
+    .question{
+        margin-top: 15vh;
+        padding: 25px;
+        box-shadow: 3px 4px 11px -3px #000000;  
+    }
+    .question h3{
+        color: orange;
+    }
+    .page h4{
+        margin-top: 100px;
+        padding: 20px 50px 20px 50px;
+    }
+    #oui_non{
+        margin: 15px -50px 0px 110px;
+        display: inline;
+        justify-content: center;
+        padding: 5px 20px 5px 20px;
+        background-color: orange;
+        border: 0.5px solid rgb(0, 0, 0);
+        border-radius: 20px;
+        cursor: pointer;
+        transition: 0.2s;
+    }
+    #oui_non:hover{
+        transition: 0.2s;
+        color: orange;
+        background-color: black;
+    }
+    .locataire{
+        margin-top: 50px;
+        border: 1px solid orange;
+        padding: 24px;
+    }
+    .votre_statut{
+        margin: 10px 0px 10px 10px;
+        padding-right: 40px;
+    }
+    .votre_statut1{
+        margin: 10px 10px 10px 0px;
+        margin-right: 0px;
+        border: 0.3px solid rgb(102, 102, 102);
+    }
+    .label_satut{
+        margin: 10px;
+    }
+    #ajout_locataire{
+        margin: 20px 0px 0px 150px;
+        color: orange;
+        background-color: black;
+        border: 0.5px solid rgb(75, 75, 75);
+    }
+    #lancer_test{
+        margin: 20px 0px 0px 137px;
+        padding: 5px 40px 5px 40px;
+        border: 0.5px solid orange;
+    }
+    .deuxieme_page h4{
+        margin-top: 90px;
+        padding-right: 10px !important;
+        padding-left: 20px;
+    }
+    .deuxieme_page{
+        display: flex;
+    }
+    .deuxieme_page p{
+        margin-top: 115px;
+    }
+    .form1{
+        margin: 10px;
+    }
+    .form_input{
+        margin: 10px;
+    }
+    .label_form{
+        margin: 10px;
+        font-size: 1.1em;
+    }
+    .label_form1{
+        margin: 10px;
+        font-size: 1.1em;
+    }
+    .justi{
+        margin-top: 20px;
+    }
+    .justi h6{
+        font-size: 1.2em;
+    }
+    .justi_fournir li{
+        list-style: circle;
+    }
+    .justi_fournir{
+        margin-top: 20px;
+        padding-left: 15px;
+    }
+    
+</style>
+
+<body style="overflow-x: hidden;">
+    <header>
+        <div class="container-fluid">
+            <h1>salut</h1>
+        </div>
+    </header>
+    <div class="container-fluid home">
+        <div class="row">
+            <div class="col-md-2">
+                <div class="container ajout_dossier">
+                    <h3>Dossier locataire</h3>
+                        <div class="row premier_dossier">
+                            <ul>
+                                <li><a href="/"><i class="fas fa-plus fa-10px"></i>Ajouter un dossier</a></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="container votre-dossier">
+                    <h1>Votre dossier</h1>
+                    <form style="width: 100%;">
+                        <!-- <div class="page" id="page1">
+                            <h4>Les locataires sont-ils dans les lieux ?</h4>
+                            <label for=""></label>
+                            <input type="button" id="oui_non" value="Oui">
+                            <input type="button" id="oui_non" value="Non">
+                        </div>
+                        <div class="container-fluid locataire">
+                            <h4 style="margin: 0px 0px 30px 0px;">Locataire 1</h4>
+                            <div class="row">
+                                <label for="Statut du locataire" class="label_satut">Statut du locataire</label>
+                                <select name="Statut_locataire" id="" class="votre_statut">
+                                    <option value="">--Votre statut--</option>
+                                    <option value="CDI hors période d'essai">CDI hors période d'essai</option>
+                                    <option value="CDI en période d'essaie">CDI en période d'essaie</option>
+                                    <option value="Étudiant, alternant">Étudiant, alternant</option>
+                                    <option value="Fonctionnaire">Fonctionnaire</option>
+                                    <option value="Profession libérale">Profession libérale</option>
+                                    <option value="Indépendant">Indépendant</option>
+                                    <option value="Salarié en CDD">Salarié en CDD</option>
+                                    <option value="Intérimaire">Intérimaire</option>
+                                    <option value="intermitent du spectacle">intermitent du spectacle</option>
+                                    <option value="Retraité">Retraité</option>
+                                    <option value="Sans emploie">Sans emploie</option> 
+                                </select>
+                            </div>
+                            <div class="row">
+                                <label for="Revenus du locataire" class="label_satut">Revenus du locataire :</label>
+                                <input type="number" class="votre_statut" min="0" max="9999999999">
+                                <button class="votre_statut1">€/mois</button>
+                            </div>
+                            <div class="row">
+                                <label for="Revenus complémentaires du foyer" class="label_satut">Revenus complémentaires du foyer :</label>
+                                <input type="number" class="votre_statut" min="0" max="9999999999">
+                                <button class="votre_statut1">€/mois</button>
+                            </div>
+                            <div class="row">
+                                <label for="Loyer + charges" class="label_satut">Loyer + charges :</label>
+                                <input type="number" class="votre_statut" min="0" max="9999999999">
+                                <button class="votre_statut1">€/mois</button>
+                            </div>
+                            <div class="row">
+                                <input type="button" id="ajout_locataire" value="+ Ajouter un locataire">
+                            </div>
+                            <div class="row">
+                                <input type="button" id="lancer_test" value="Lancer le test">
+                            </div>
+                        </div> -->
+                        <div class="container-fluid page" id="page2">
+                            <div class="row deuxieme_page">
+                                <h4>Justificatifs locataire 1</h4>
+                                <p>CDI hors période d'essaie</p>
+                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="row form1">
+                                        <label for="Nom_locataire" class="label_form">Nom du locataire :</label>
+                                        <input type="text" class="form_input" value="optionnel">
+                                    </div>
+                                    <div class="row form1">
+                                        <label for="Nom_locataire" class="label_form">Email du locataire :</label>
+                                        <input type="text" class="form_input" value="optionnel">
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="row form1">
+                                        <label for="Commentaires" class="label_form1">Commentaires :</label>
+                                        <textarea name="Comment" id="" cols="30" rows="1.7" class="form_input"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-6 justi">
+                                        <h6>Justificatifs à fournir</h6>
+                                        <ul class="justi_fournir">
+                                            <li>Pièce d'identité</li>
+                                            <li>Contrat de travail ou attestation employeur</li>
+                                            <li>Bulletin de salaire février</li>
+                                            <li>Bulletin de salaire janvier</li>
+                                            <li>Bulletin de salaire décembre</li>
+                                            <li>Dernier avis d'impôts</li>
+                                            <li>Trois dernières quittances de loyer ou attestation d'hébergement</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-6 justi">
+                                        <h6>Justificatifs optionnels</h6>
+                                        <ul class="justi_fournir">
+                                            <li>Bulletin de salaire novembre</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="page" id="page3">
+                            <h3>Les locataires sont-ils dans les lieux ?</h3>
+                            <label for=""></label>
+                            <input type="button" id="oui_non" value="Oui">
+                            <input type="button" id="oui_non" value="Non">
+                        </div> -->
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="question">
+                    <h3>Eligibilité des candidats</h3>
+                    <p>Ces questions vont vous permettre de déterminer rapidement et sans engagement si vos candidats sont éligibles à l'assurance loyer impayé.
+                    Plus d'infos sur les critères locataire sur notre page assurance loyer impayé.</p>
+                </div>
+                <div class="question">
+                    <h3>Loyer impayé y remédier</h3>
+                    <p>Ces questions vont vous permettre de déterminer rapidement et sans engagement si vos candidats sont éligibles à l'assurance loyer impayé.
+                    Plus d'infos sur les critères locataire sur notre page assurance loyer impayé.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>    
+</html>
+
+
