@@ -1,5 +1,4 @@
 {% load static %}
-
 <!DOCTYPE html>
 <html>
 
@@ -10,50 +9,24 @@
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
-    <script type="text/javascript">
-
-        // const pages = document.getElementsByClassName('.page')
-        // const header = document.querySelector("header")
-        // const nbPages = pages.length // nombre de page du formulaire
-        // let pageActive = 1
-
-        // // console.log(nbPages)
-
-        // window.onload = () => {
-        //     // on affiche la premiere page du formulaire
-        //     document.querySelector(".page").style.display = "initial"
-
-        //     //on afiche les numéro des pages
-        //     //on parcour la listes des pages 
-        //     pages.forEach((page, HomeDossier) => {
-        //         //on crée l'élement de la page
-        //         let element = document.createElement("div")
-        //         element .classList.add("page-num")
-        //         if(pageActive === HomeDossier + 1){
-        //             element.classList.add("active")
-        //         }
-        //         element.innerHTML = HomeDossier + 1
-        //         header.appendChild(element)
-        //     })
-        // }
-
-    </script>
 </head>
 
 <style>
+    body{
+        height: fit-content !important;
+    }
     .home{
-        height: 100vh;
         width: 100vw;
         font-family: 'Oswald', sans-serif;
     }
     .ajout_dossier{
-        display: block;
+        display: flex;
         background-color: rgba(0, 0, 255, 0);
         height: 70vh;
+        margin-top: 100px;
         width: 24vh;
-        margin: 70px 0px 0px 30px;
-        position: relative;
         justify-content: center;
+        position: relative;
         box-shadow: 3px 4px 11px -3px #000000;  
     }
     .ajout_dossier h3{
@@ -92,21 +65,22 @@
         box-sizing: 15px;
     }
     .votre-dossier{
-        display: flex;
         justify-content: center;
-        margin: 70px 0px 0px 10px;
+        margin: 100px 0px 0px 10px;
         margin-left: 10px;
+        padding-bottom: 50px;
         box-shadow: 3px 4px 11px -3px #000000;
-        height: 85vh;
     }
     .votre-dossier h1{
+        text-align: center !important;
+        margin-top: -80px;
         text-transform: uppercase;
         padding-top: 20px;
-        position: absolute;
-        border-bottom: 2px solid rgb(117, 117, 117);
+        border-bottom: 2px solid rgba(117, 117, 117, 0.541);
+        padding-bottom: 20px;
     }
     .question{
-        margin-top: 15vh;
+        margin-top: 21vh;
         padding: 25px;
         box-shadow: 3px 4px 11px -3px #000000;  
     }
@@ -114,12 +88,19 @@
         color: orange;
     }
     .page h4{
-        margin-top: 100px;
-        padding: 20px 50px 20px 50px;
+        margin-top: 30px;
+        padding: 20px 50px 0px 20px;
+        text-align: center !important;
+    }
+    .oui{
+        display: flex;
+        flex-direction: row;
+        margin: auto;
+        width: 30%;
     }
     #oui_non{
-        margin: 15px -50px 0px 110px;
-        display: inline;
+        margin: 10px;
+        display: block;
         justify-content: center;
         padding: 5px 20px 5px 20px;
         background-color: orange;
@@ -127,6 +108,7 @@
         border-radius: 20px;
         cursor: pointer;
         transition: 0.2s;
+        flex: 1;
     }
     #oui_non:hover{
         transition: 0.2s;
@@ -162,7 +144,7 @@
         border: 0.5px solid orange;
     }
     .deuxieme_page h4{
-        margin-top: 90px;
+        margin-top: 30px;
         padding-right: 10px !important;
         padding-left: 20px;
     }
@@ -170,7 +152,7 @@
         display: flex;
     }
     .deuxieme_page p{
-        margin-top: 115px;
+        margin-top: 55px;
     }
     .form1{
         margin: 10px;
@@ -199,15 +181,57 @@
         margin-top: 20px;
         padding-left: 15px;
     }
+    .dernier_page_label{
+        font-size: 1.1em;
+        margin: 20px;
+    }
+    .dernier_input{
+        margin-left: 20px;
+        padding-right: 100px;
+        border: 0.1px solid rgb(105, 105, 105);
+        border-radius: 7px;
+        margin-right: 100px;
+    }
+    .button_final{
+        color: rgb(255, 255, 255); 
+        background-color: orange;
+        border: none;
+        border-radius: 10px;
+        padding: 10px 15px 10px 15px;
+        font-weight: 500;
+        margin: 100px 0px 0px 220px;
+        cursor: pointer;
+    }
+    .page{
+        display: none;
+    }
+    .page:first-child{
+        display: block;
+    }
+    header{
+        padding: 30px;
+        position: relative;
+        top: -100px;
+        padding-right: 35px !important;
+    }
+    .logo_reu a{
+        text-decoration: none;
+        color: black;
+        border-bottom: 2.5px solid orange;
+        padding-bottom: 15px;
+    }
+    .logo_reu{
+        text-align: center;
+    }
+    .logo_reu a:hover{
+        text-decoration: none;
+        color: orange;
+        cursor: pointer;
+    }
     
 </style>
 
 <body style="overflow-x: hidden;">
-    <header>
-        <div class="container-fluid">
-            <h1>salut</h1>
-        </div>
-    </header>
     <div class="container-fluid home">
         <div class="row">
             <div class="col-md-2">
@@ -227,108 +251,212 @@
                 </div>
             </div>
             <div class="col-md-6">
-                <div class="container votre-dossier">
+                <div class="votre-dossier">
+                    <header class="container">
+                        <div class="row les_logos">
+                            <div class="col-md logo_reu">
+                                <a href="#" class="pageSelect"><i class="fas fa-users"></i>&nbsp;information des candidats</a>
+                            </div>
+                            <div class="col-md logo_reu">
+                                <a href="#" class="pageSelect"><i class="fas fa-file-pdf"></i>&nbsp;Dépot des justificatifs</a>
+                            </div>
+                            <div class="col-md logo_reu">
+                                <a href="#" class="pageSelect"><i class="fas fa-exchange-alt"></i>&nbsp;Récupération du dossier</a>
+                            </div>
+                        </div>
+                    </header>
                     <h1>Votre dossier</h1>
                     <form style="width: 100%;">
-                        <!-- <div class="page" id="page1">
-                            <h4>Les locataires sont-ils dans les lieux ?</h4>
-                            <label for=""></label>
-                            <input type="button" id="oui_non" value="Oui">
-                            <input type="button" id="oui_non" value="Non">
-                        </div>
-                        <div class="container-fluid locataire">
-                            <h4 style="margin: 0px 0px 30px 0px;">Locataire 1</h4>
-                            <div class="row">
-                                <label for="Statut du locataire" class="label_satut">Statut du locataire</label>
-                                <select name="Statut_locataire" id="" class="votre_statut">
-                                    <option value="">--Votre statut--</option>
-                                    <option value="CDI hors période d'essai">CDI hors période d'essai</option>
-                                    <option value="CDI en période d'essaie">CDI en période d'essaie</option>
-                                    <option value="Étudiant, alternant">Étudiant, alternant</option>
-                                    <option value="Fonctionnaire">Fonctionnaire</option>
-                                    <option value="Profession libérale">Profession libérale</option>
-                                    <option value="Indépendant">Indépendant</option>
-                                    <option value="Salarié en CDD">Salarié en CDD</option>
-                                    <option value="Intérimaire">Intérimaire</option>
-                                    <option value="intermitent du spectacle">intermitent du spectacle</option>
-                                    <option value="Retraité">Retraité</option>
-                                    <option value="Sans emploie">Sans emploie</option> 
-                                </select>
-                            </div>
-                            <div class="row">
-                                <label for="Revenus du locataire" class="label_satut">Revenus du locataire :</label>
-                                <input type="number" class="votre_statut" min="0" max="9999999999">
-                                <button class="votre_statut1">€/mois</button>
-                            </div>
-                            <div class="row">
-                                <label for="Revenus complémentaires du foyer" class="label_satut">Revenus complémentaires du foyer :</label>
-                                <input type="number" class="votre_statut" min="0" max="9999999999">
-                                <button class="votre_statut1">€/mois</button>
-                            </div>
-                            <div class="row">
-                                <label for="Loyer + charges" class="label_satut">Loyer + charges :</label>
-                                <input type="number" class="votre_statut" min="0" max="9999999999">
-                                <button class="votre_statut1">€/mois</button>
-                            </div>
-                            <div class="row">
-                                <input type="button" id="ajout_locataire" value="+ Ajouter un locataire">
-                            </div>
-                            <div class="row">
-                                <input type="button" id="lancer_test" value="Lancer le test">
-                            </div>
-                        </div> -->
-                        <div class="container-fluid page" id="page2">
-                            <div class="row deuxieme_page">
-                                <h4>Justificatifs locataire 1</h4>
-                                <p>CDI hors période d'essaie</p>
-                            </div>
-                            <div class="row">
-                                <div class="col-6">
-                                    <div class="row form1">
-                                        <label for="Nom_locataire" class="label_form">Nom du locataire :</label>
-                                        <input type="text" class="form_input" value="optionnel">
-                                    </div>
-                                    <div class="row form1">
-                                        <label for="Nom_locataire" class="label_form">Email du locataire :</label>
-                                        <input type="text" class="form_input" value="optionnel">
-                                    </div>
-                                </div>
-                                <div class="col-6">
-                                    <div class="row form1">
-                                        <label for="Commentaires" class="label_form1">Commentaires :</label>
-                                        <textarea name="Comment" id="" cols="30" rows="1.7" class="form_input"></textarea>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="page">
                             <div class="container-fluid">
-                                <div class="row">
-                                    <div class="col-6 justi">
-                                        <h6>Justificatifs à fournir</h6>
-                                        <ul class="justi_fournir">
-                                            <li>Pièce d'identité</li>
-                                            <li>Contrat de travail ou attestation employeur</li>
-                                            <li>Bulletin de salaire février</li>
-                                            <li>Bulletin de salaire janvier</li>
-                                            <li>Bulletin de salaire décembre</li>
-                                            <li>Dernier avis d'impôts</li>
-                                            <li>Trois dernières quittances de loyer ou attestation d'hébergement</li>
-                                        </ul>
+                                <div id="page1">
+                                    <h4>Les locataires sont-ils dans les lieux ?</h4>
+                                    <label for=""></label>
+                                    <div class="oui">
+                                        <input type="button" id="oui_non" value="Oui">
+                                        <input type="button" id="oui_non" value="Non">
                                     </div>
-                                    <div class="col-6 justi">
-                                        <h6>Justificatifs optionnels</h6>
-                                        <ul class="justi_fournir">
-                                            <li>Bulletin de salaire novembre</li>
-                                        </ul>
+                                </div>
+                                <div class="container-fluid locataire">
+                                    <h4 style="margin: 0px 0px 30px 0px;">Locataire 1</h4>
+                                    <div class="row">
+                                        <label for="Statut du locataire" class="label_satut">Statut du locataire</label>
+                                        <select name="Statut_locataire" id="" class="votre_statut">
+                                            <option value="">--Votre statut--</option>
+                                            <option value="CDI hors période d'essai">CDI hors période d'essai</option>
+                                            <option value="CDI en période d'essaie">CDI en période d'essaie</option>
+                                            <option value="Étudiant, alternant">Étudiant, alternant</option>
+                                            <option value="Fonctionnaire">Fonctionnaire</option>
+                                            <option value="Profession libérale">Profession libérale</option>
+                                            <option value="Indépendant">Indépendant</option>
+                                            <option value="Salarié en CDD">Salarié en CDD</option>
+                                            <option value="Intérimaire">Intérimaire</option>
+                                            <option value="intermitent du spectacle">intermitent du spectacle</option>
+                                            <option value="Retraité">Retraité</option>
+                                            <option value="Sans emploie">Sans emploie</option> 
+                                        </select>
+                                    </div>
+                                    <div class="row">
+                                        <label for="Revenus du locataire" class="label_satut">Revenus du locataire :</label>
+                                        <input type="number" class="votre_statut" min="0" max="9999999999">
+                                        <button class="votre_statut1">€/mois</button>
+                                    </div>
+                                    <div class="row">
+                                        <label for="Revenus complémentaires du foyer" class="label_satut">Revenus complémentaires du foyer :</label>
+                                        <input type="number" class="votre_statut" min="0" max="9999999999">
+                                        <button class="votre_statut1">€/mois</button>
+                                    </div>
+                                    <div class="row">
+                                        <label for="Loyer + charges" class="label_satut">Loyer + charges :</label>
+                                        <input type="number" class="votre_statut" min="0" max="9999999999">
+                                        <button class="votre_statut1">€/mois</button>
+                                    </div>
+                                    <div class="row">
+                                        <input type="button" id="ajout_locataire" value="+ Ajouter un locataire">
+                                    </div>
+                                    <div class="row">
+                                        <input type="button" id="lancer_test" value="Lancer le test">
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <!-- <div class="page" id="page3">
-                            <h3>Les locataires sont-ils dans les lieux ?</h3>
-                            <label for=""></label>
-                            <input type="button" id="oui_non" value="Oui">
-                            <input type="button" id="oui_non" value="Non">
-                        </div> -->
+
+                        <div class="page">
+                            <div class="container-fluid" id="page2">
+                                <div class="row deuxieme_page">
+                                    <h4>Justificatifs locataire 1</h4>
+                                    <p>CDI hors période d'essaie</p>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="row form1">
+                                            <label for="Nom_locataire" class="label_form">Nom du locataire :</label>
+                                            <input type="text" class="form_input" placeholder="optionnel">
+                                        </div>
+                                        <div class="row form1">
+                                            <label for="Nom_locataire" class="label_form">Email du locataire :</label>
+                                            <input type="text" class="form_input" placeholder="optionnel">
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="row form1">
+                                            <label for="Commentaires" class="label_form1">Commentaires :</label>
+                                            <textarea name="Comment" id="" cols="30" rows="1.7" class="form_input"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col-6 justi">
+                                            <h6>Justificatifs à fournir</h6>
+                                            <ul class="justi_fournir">
+                                                <li>Pièce d'identité</li>
+                                                <li>Contrat de travail ou attestation employeur</li>
+                                                <li>Bulletin de salaire février</li>
+                                                <li>Bulletin de salaire janvier</li>
+                                                <li>Bulletin de salaire décembre</li>
+                                                <li>Dernier avis d'impôts</li>
+                                                <li>Trois dernières quittances de loyer ou attestation d'hébergement</li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-6 justi">
+                                            <h6>Justificatifs optionnels</h6>
+                                            <ul class="justi_fournir">
+                                                <li>Bulletin de salaire novembre</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="container-fluid" style="margin-top: 25px;">
+                                    <div class="row">
+                                        <div class="col-md-4 ajout_fichier">
+                                            <div class="row">
+                                                <label for="file">1 : Je choisis le fichier</label>
+                                            </div>
+                                            <div class="row">
+                                                <input type="file" style="width: 115px; margin-left: 10px;">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 ajout_fichier">
+                                            <div class="row">
+                                                <label for="type_file">2 : Ce fichier contient</label>
+                                            </div>
+                                            <div class="row">
+                                                <select name="type_fichier" id="">
+                                                    <option value="">--</option>
+                                                    <option value="Pièce d'identité">Pièce d'identité</option>
+                                                    <option value="Contrat de travail">Contrat de travail</option>
+                                                    <option value="Attestation employeur">Attestation employeur</option>
+                                                    <option value="Bulletin de salaire févr">Bulletin de salaire févr</option>
+                                                    <option value="Bulletin de salaire janv">Bulletin de salaire janv</option>
+                                                    <option value="Bulletin de salaire déc">Bulletin de salaire déc</option>
+                                                    <option value="Dernier avis d'impots">Dernier avis d'impots</option>
+                                                    <option value="Trois dernières quittances">Trois dernières quittances</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 ajout_fichier">
+                                            <div class="row">
+                                                <label for="ajouter_file">3 : j'ajoute le fichier</label>
+                                            </div>
+                                            <div class="row">
+                                                <button style="background-color: orange;"><i class="fas fa-cloud-upload-alt">Ajouter</i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="page" id="page3">
+                            <div class="container-fluid" style="margin-top: 50px;">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <h4>Vos information</h4>
+                                        <div class="row">
+                                            <label for="adresse_logement" class="dernier_page_label">Votre nom</label>
+                                        </div>
+                                        <div class="row">
+                                            <input type="text" class="dernier_input">
+                                        </div>
+                                        <div class="row">
+                                            <label for="adresse_logement" class="dernier_page_label">Adresse du logement</label>
+                                        </div>
+                                        <div class="row">
+                                            <input type="text" class="dernier_input">
+                                        </div>
+                                        <div class="row">
+                                            <label for="Date_signature_bail" class="dernier_page_label">Date de signature prévisionnelle du bail</label>
+                                        </div>
+                                        <div class="row">
+                                            <input type="text" class="dernier_input">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <h4>Accès à votre espace</h4>
+                                        <div class="row">
+                                            <label for="dossier_mail" class="dernier_page_label">Adresse Email</label>
+                                        </div>
+                                        <div class="row">
+                                            <input type="text" class="dernier_input">
+                                        </div>
+                                        <div class="row">
+                                            <label for="dossier_mail" class="dernier_page_label">Mot de passe</label>
+                                        </div>
+                                        <div class="row">
+                                            <input type="text" class="dernier_input">
+                                        </div>
+                                        <div class="row">
+                                            <label for="dossier_mail" class="dernier_page_label">Confirmez votre mot de passe</label>
+                                        </div>
+                                        <div class="row">
+                                            <input type="text" class="dernier_input">
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="button_final">Créer votre compte<br>pour récupérer le dossier locataire</button>
+                            </div>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -346,6 +474,23 @@
             </div>
         </div>
     </div>
+    <script>
+        const pages = document.getElementsByClassName("page");
+        const header = document.querySelector("header");
+        const nbPages = pages.length; // nombre de page du formulaire
+        const pageSelect = document.getElementsByClassName('pageSelect');
+
+        for(let i = 0; i < pages.length; i++){
+            pageSelect[i].addEventListener('click', () => {
+                for(let x = 0; x < pages.length; x++){
+                    pages[x].style.display = "none";
+                    pageSelect[x].classList.remove('active');
+                }
+                pages[i].style.display = "block";
+                pageSelect[i].classList.add('active');
+            })
+        }
+    </script>
 </body>    
 </html>
 

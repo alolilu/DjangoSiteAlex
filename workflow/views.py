@@ -53,7 +53,13 @@ def workflow(request):
 
 def workrep(request):
     Files=File.objects.latest('id')
-    contextt={'Files':Files}
+    context={'Files':Files}
+    
+    form = UpdateFile(request.POST or None, instance=Files)
+    if request.method == 'POST':
+        form = UpdateFile(request.POST or None, instance=Files)
+        if form.is_valid():
+            form.save()
 
     if request.method == 'POST':
         verdict = request.POST.get('verdict')
@@ -75,7 +81,7 @@ def workrep(request):
         '''.format(data1['verdict'])
         send_mail(data1['verdict'], message, '', ['alexis.fredriksen5@gmail.com'])
 
-    return render(request, 'workflow/workrep.html', contextt)
+    return render(request, 'workflow/workrep.html', context)
 
 
 def workfinal(request):

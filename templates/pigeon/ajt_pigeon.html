@@ -5,8 +5,8 @@
     {% load static %}
 
     <form enctype="multipart/form-data" action="" method="POST">
-
         {% csrf_token %}
+        {{NewPigeon}}
         <div class="container contenue">
             <h1>Ajouter un pigeon</h1>
                 <div class="container-fluid formulaire">
@@ -17,6 +17,10 @@
                     <div class="row">
                         <label name="des_pigeon" class="text" for="sname">Description du pigeon</label>
                         <input name="des_pigeon" type="text" id="form">
+                    </div>
+                    <div class="row">
+                        <label name="des_pigeon" class="text" for="sname">Prix du pigeon</label>
+                        <input name="prix_pigeon" type="number" id="form">
                     </div>
                     <div class="row">
                         <label name="img_pigeon" class="text" id="file" for="img_pigeon">Image du pigeon</label>
