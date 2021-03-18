@@ -3,4 +3,4 @@ from .models import NewPigeon
 class pigeon(ModelForm):
     class Meta:
         model = NewPigeon
-        fields = ['__all__']
+        fields = ['nom_pigeon', 'des_pigeon', 'img_pigeon', 'prix_pigeon']

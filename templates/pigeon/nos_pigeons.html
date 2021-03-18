@@ -141,13 +141,13 @@
                 </div>
                 <div class="container-fluid principal">
                     <div class="row">
-                        {% for i in pigeon %}
+                        {% for NewPigeon in pigeon %}
                         <div class="col-md-4 hey">
                             <div class="row partie1">
                                 <img src="{{ NewPigeon.img_pigeon }}" alt="">
                             </div>
                             <div class="row partie2">
-                                <h5>{{ i.nom_pigeon }}</h5>
+                                <h5>{{ NewPigeon.nom_pigeon }}</h5>
                             </div>
                             <div class="row partie3">
                                 <h5>{{ NewPigeon.prix_pigeon }}</h5>
@@ -178,7 +178,7 @@
                         {% endfor %}
                     </div>
                 </div>
-            </div>  {% for i in pigeon %}
+            </div>
         </div>
     </div>
 

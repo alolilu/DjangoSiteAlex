@@ -79,8 +79,11 @@
         border-bottom: 2px solid rgba(117, 117, 117, 0.541);
         padding-bottom: 20px;
     }
+    .question:first-child{
+        margin-top: 100px;
+    }
     .question{
-        margin-top: 21vh;
+        margin-top: 30px;
         padding: 25px;
         box-shadow: 3px 4px 11px -3px #000000;  
     }
@@ -92,13 +95,13 @@
         padding: 20px 50px 0px 20px;
         text-align: center !important;
     }
-    .oui{
+    .oui_div{
         display: flex;
         flex-direction: row;
         margin: auto;
         width: 30%;
     }
-    #oui_non{
+    .oui_non{
         margin: 10px;
         display: block;
         justify-content: center;
@@ -109,8 +112,39 @@
         cursor: pointer;
         transition: 0.2s;
         flex: 1;
+        outline: none;
     }
-    #oui_non:hover{
+    .oui_non1{
+        margin: 10px;
+        display: block;
+        justify-content: center;
+        padding: 5px 20px 5px 20px;
+        background-color: orange;
+        border: 0.5px solid rgb(0, 0, 0);
+        border-radius: 20px;
+        cursor: pointer;
+        transition: 0.2s;
+        flex: 1;
+        width: 10px;
+        text-decoration: none;
+        outline: none;
+    }
+    .oui_non:focus{
+        border: none;
+    }
+    .oui_non1:hover{
+        transition: 0.2s;
+        color: orange;
+        background-color: black;
+    }
+    .autre_question{
+        display: none;
+    }
+    .autre_bouton{
+        margin-left: 265px;
+        margin-right: 265px;
+    }
+    .oui_non:hover{
         transition: 0.2s;
         color: orange;
         background-color: black;
@@ -119,10 +153,10 @@
         margin-top: 50px;
         border: 1px solid orange;
         padding: 24px;
+        display: none;
     }
     .votre_statut{
-        margin: 10px 0px 10px 10px;
-        padding-right: 40px;
+        margin: 10px 0px 10px 0px;
     }
     .votre_statut1{
         margin: 10px 10px 10px 0px;
@@ -173,9 +207,6 @@
     }
     .justi h6{
         font-size: 1.2em;
-    }
-    .justi_fournir li{
-        list-style: circle;
     }
     .justi_fournir{
         margin-top: 20px;
@@ -228,7 +259,40 @@
         color: orange;
         cursor: pointer;
     }
-    
+    .a_cocher{
+        margin: 5px;
+    }
+    .justi_fournir li{
+        list-style: none;
+    }
+    .autre_question1{
+        display: none;
+    }
+    .autre_question1 p{
+        margin-top: 30px;
+        padding: 15px 20px 15px 20px;
+        background-color: blanchedalmond;
+        font-size: 1.1em;
+        color: gray;
+        border: 0.3px solid rgb(251, 224, 182);
+    }
+    .autre_question2{
+        display: none;
+        text-align: center;
+        height: 50px;
+    }
+    .question_form h4{
+        padding: 10px;
+    }
+    #number1{
+        opacity: 0;
+    }
+    #number2{
+        opacity: 0;
+    }
+    #number3{
+        opacity: 0;
+    }
 </style>
 
 <body style="overflow-x: hidden;">
@@ -271,10 +335,28 @@
                             <div class="container-fluid">
                                 <div id="page1">
                                     <h4>Les locataires sont-ils dans les lieux ?</h4>
-                                    <label for=""></label>
-                                    <div class="oui">
-                                        <input type="button" id="oui_non" value="Oui">
-                                        <input type="button" id="oui_non" value="Non">
+                                    <div class="oui_div">
+                                        <input type="button" id="oui" class="oui_non" value="Oui">
+                                        <input type="button" id="non" class="oui_non" value="Non">
+                                    </div>
+                                    <div class="autre_question">
+                                        <h4>Avez-vous eu un incident de paiement sur les 6 derniers mois ?</h4>
+                                        <div class="row autre_bouton">
+                                            <input type="button" id="oui1" class="oui_non1" value="Oui">
+                                            <input type="button" id="non1non" class="oui_non1" value="Non">
+                                        </div>
+                                    </div>
+                                    <div class="autre_question1">
+                                        <p class="pas_possible">Il n'est pas possible de vous assurer si vous avez eu des incidents de paiements sur les 6 derniers mois.</p>
+                                    </div>
+                                    <div class="autre_question2">
+                                        <label for="loca_jour"></label><h4>le locataire est dans les lieux depuis</h4>
+                                        <select name="cb_jour" id="" class="cb_jour">
+                                            <option value="">--</option>
+                                            <option value="moins de 14 jours" id="jour1">moins de 14 jours</option>
+                                            <option value="entre 14 jours et 6 mois" id="jour2">entre 14 jours et 6 mois</option>
+                                            <option value="plus de 6 mois" id="jour3">plus de 6 mois</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="container-fluid locataire">
@@ -350,19 +432,19 @@
                                         <div class="col-6 justi">
                                             <h6>Justificatifs à fournir</h6>
                                             <ul class="justi_fournir">
-                                                <li>Pièce d'identité</li>
-                                                <li>Contrat de travail ou attestation employeur</li>
-                                                <li>Bulletin de salaire février</li>
-                                                <li>Bulletin de salaire janvier</li>
-                                                <li>Bulletin de salaire décembre</li>
-                                                <li>Dernier avis d'impôts</li>
-                                                <li>Trois dernières quittances de loyer ou attestation d'hébergement</li>
+                                                <li><input type="checkbox" class="a_cocher">Pièce d'identité</li>
+                                                <li><input type="checkbox" class="a_cocher">Contrat de travail ou attestation employeur</li>
+                                                <li><input type="checkbox" class="a_cocher">Bulletin de salaire février</li>
+                                                <li><input type="checkbox" class="a_cocher">Bulletin de salaire janvier</li>
+                                                <li><input type="checkbox" class="a_cocher">Bulletin de salaire décembre</li>
+                                                <li><input type="checkbox" class="a_cocher">Dernier avis d'impôts</li>
+                                                <li><input type="checkbox" class="a_cocher">Trois dernières quittances de loyer ou attestation d'hébergement</li>
                                             </ul>
                                         </div>
                                         <div class="col-6 justi">
                                             <h6>Justificatifs optionnels</h6>
                                             <ul class="justi_fournir">
-                                                <li>Bulletin de salaire novembre</li>
+                                                <li><input type="checkbox" class="a_cocher">Bulletin de salaire novembre</li>
                                             </ul>
                                         </div>
                                     </div>
@@ -466,15 +548,27 @@
                     <p>Ces questions vont vous permettre de déterminer rapidement et sans engagement si vos candidats sont éligibles à l'assurance loyer impayé.
                     Plus d'infos sur les critères locataire sur notre page assurance loyer impayé.</p>
                 </div>
-                <div class="question">
-                    <h3>Loyer impayé y remédier</h3>
-                    <p>Ces questions vont vous permettre de déterminer rapidement et sans engagement si vos candidats sont éligibles à l'assurance loyer impayé.
-                    Plus d'infos sur les critères locataire sur notre page assurance loyer impayé.</p>
+                <!-- moins de 14 jours -->
+                <div class="question" id="number1">
+                    <h3>Souscription sans carence</h3>
+                    <p>Si vous souscrivez au plus tard 14 jours après l'entrée dans les lieux,<br> la garantie s'appliquera sans carence (période probatoire).</p>
+                </div>
+                <div class="question" id="number2">
+                    <h3>Souscription sans carence</h3>
+                    <p>Les locataires en place depuis moins de 6 mois doivent rentrer dans les critères de solvabilité.<br>Vous devez considérer leur situation à la signature du bail.</p>
+                </div>
+                <!-- 14 - 6mois -->
+                <div class="question number3" id="number3">
+                    <h3>Carence de 3 mois</h3>
+                    <p>Pour les locataires en place depuis plus de 14 jours,<br> une période probatoire de 3 mois s'applique.</p>
                 </div>
             </div>
         </div>
     </div>
     <script>
+         
+        // De la page 1 a la 3
+
         const pages = document.getElementsByClassName("page");
         const header = document.querySelector("header");
         const nbPages = pages.length; // nombre de page du formulaire
@@ -490,6 +584,83 @@
                 pageSelect[i].classList.add('active');
             })
         }
+
+        // bouton principal oui et non 
+
+        var bouton_non = document.getElementById('non');
+
+        bouton_non.addEventListener('click', afficher_locataire)
+
+        function afficher_locataire(){
+            document.getElementsByClassName('autre_question1')[0].style.display = 'none';
+            document.getElementsByClassName('locataire')[0].style.display = 'block';
+            document.getElementsByClassName('autre_question')[0].style.display = 'none';
+            ducument.getElementsByClassName('autre_question2')[0].style.display = 'none';
+        }
+
+        var bouton_oui = document.getElementById('oui');
+
+        bouton_oui.addEventListener('click', afficher_autre_question)
+
+        function afficher_autre_question(){
+            document.getElementsByClassName('autre_question')[0].style.display = 'block';
+            document.getElementsByClassName('locataire')[0].style.display = 'none';
+            document.getElementsByClassName('autre_question1')[0].style.display = 'none';
+        }
+
+        // bouton secondaire oui et non
+
+        var bouton_oui1 = document.getElementById('oui1');
+
+        bouton_oui1.addEventListener('click', afficher_para_impo)
+
+        function afficher_para_impo(){
+            document.getElementsByClassName('autre_question1')[0].style.display = 'block';
+            ducument.getElementsByClassName('autre_question2')[0].style.display = 'none';
+        }
+
+        var bouton_non1 = document.getElementById('non1non');
+
+        bouton_non1.addEventListener('click',  afficher_les_jours)
+
+        function afficher_les_jours(){
+            document.getElementsByClassName('autre_question1')[0].style.display = 'none';
+            ducument.getElementsByClassName('autre_question2')[0].style.display = 'block';
+        }
+
+        // afficher les questions suivant le select
+
+        const selectElement = document.querySelector('.cb_jour');
+
+        selectElement.addEventListener('change', afficher_les_questions)
+           
+        function afficher_les_questions(){
+            document.
+        }
+       
+
+        // var jour11 = ducument.getElementById('jour1');
+
+        // jour11.addEventListener('click', afficher_premiere_question)
+
+        // function afficher_premiere_question(){
+        //     document.getElementsByClassName('number1')[0].style.display = 'block';
+        // }
+
+        // var jour22 = ducument.getElementById('jour2');
+        // var jour33 = ducument.getElementById('jour3');
+
+        // jour22.addEventListener('click', afficher_deuxieme_question)
+        // jour33.addEventListener('click', afficher_troisieme_question)
+
+        
+        // function afficher_deuxieme_question(){
+        //     document.getElementsById('number2')[0].style.display = 'block';
+        // }
+        // function afficher_troisieme_question(){
+        //     document.getElementsById('number3')[0].style.display = 'block';
+        // }
+
     </script>
 </body>    
 </html>
