@@ -116,15 +116,10 @@ body{
 }
 
 .titre-principal{
-    margin-top: 35vh;
+    margin-top: 20vh;
     text-align: center;
-}
-
-.trait{
-    content: '';
-    height: 50px;
-    color: rgb(255, 254, 254);
-    text-align: center;
+    position: relative;
+    z-index: 9999;
 }
 
 .titre-principal p{
@@ -133,24 +128,66 @@ body{
     margin: 25px;
     font-family: 'Roboto Slab', serif;
     font-style: italic;
+    z-index: 2;
+    position: absolute;
+    width: 100%;
+    margin: 200px 0px 0px 10px;
+    letter-spacing: 5px;
 }
 
 .titre-principal h1{
-    font-size: 5em;
+    font-size: 3.5em;
+    margin: 80px 0px 30px 10px;
     color: white;
     font-weight: 600;
     font-family: 'Roboto Slab', serif;
     letter-spacing: 2px;
+    position: absolute;
+    text-align: center;
+    width: 100%;
 }
 
-.bg-img{
+.slider{
     background-position: cover;
     background-repeat: no-repeat;
-    position: absolute;
+    background-position: center;
     height: 100vh;
     background-size: cover;
     width: 100vw;
-    background-image: url("../bg/bgimg.jpg")
+    position: absolute;
+    box-sizing: border-box;
+    background-image: url("../bg/bgimg.jpg");
+    transition: 1s;
+
+    animation-name: animate;
+    animation-direction: normal;
+    animation-duration: 60s;
+    animation-fill-mode: none;
+    animation-iteration-count: infinite;
+    animation-play-state: running;
+    animation-timing-function: initial;
+}
+
+@keyframes animate{
+    0%{
+        background-image: url("../bg/bgimg.jpg");
+    }
+    33%{
+        background-image: url("../bg/bgimg1.jpg");
+    }
+    66%{
+        background-image: url("../bg/bgimg2.jpg");
+    }
+}
+
+.bg-imggg{
+    position: absolute;
+    background-size: cover;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    text-align: center;
 }
 
 /* the contact  */

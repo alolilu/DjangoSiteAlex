@@ -14,14 +14,14 @@
     <div class="container-fluid" style="padding: 0;">
         <div class="row header-2">
             <div class="col-2">
-                <img src="{% static 'bg/logo.png' %}" alt="logo" class="logo">
+                <a href="{% url 'accueil' %}"><img src="{% static 'bg/logo.png' %}" alt="logo" class="logo"></a>
             </div>
             <div class="col-2">
-                <h4>Pigeon Voya</h4>
+                <a href="{% url 'accueil' %}"><h4>Pigeon Voya</h4></a>
             </div>
             <div class="col-7 navbar">
                 <ul>
-                    <a href="{% url 'accueil' %}"><li>Home</li></a>
+                    <!-- <a href="{% url 'accueil' %}"><li>Home</li></a> -->
                     <a href="{% url 'pigeon' %}"><li>Pigeon</li></a>
                     <a href="{% url 'workflow' %}"><li>WorkFlow</li></a>
                     <a href="{% url 'Dossier' %}"><li>Dossier</li></a>
@@ -31,12 +31,13 @@
             </div>
         </div>
     </div>
-    <div class="container-fluid bg-img">
+    <div class="container-fluid bg-imggg">
         <div class="container-lg titre-principal">
             <p>We help you get things done</p>
             <h1>PIGEON VOYA</h1>
-            <p class="trait"></p>
         </div>
+    </div>
+    <div class="slider">
     </div>
     <div class="container-fluid contenu">
         <div class="row contact">
