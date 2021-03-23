@@ -1,0 +1,678 @@
+body{
+    height: fit-content !important;
+    --main-bg-color: orange;
+}
+.home{
+    width: 100vw;
+    font-family: 'Oswald', sans-serif;
+}
+.ajout_dossier{
+    display: flex;
+    background-color: rgba(0, 0, 255, 0);
+    height: 70vh;
+    margin-top: 100px;
+    width: 24vh;
+    justify-content: center;
+    position: relative;
+    box-shadow: 3px 4px 11px -3px #000000;  
+}
+.ajout_dossier h3{
+    text-align: center;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 1.5em;
+    display: flex;
+    margin: 20px 10px 0px 10px;
+    position: absolute;
+}
+.premier_dossier{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+.premier_dossier ul{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    list-style: none;
+    padding: 0;
+    padding-top: 100px !important;
+}
+.premier_dossier ul li a{
+    text-decoration: none;
+    color: var(--main-bg-color);
+    padding: 15px 35px 15px 28px;
+    font-size: 1.2em;
+    transition: 0.3s;
+    font-weight: 500;
+}
+.premier_dossier ul li a:hover{
+    background-color: rgba(170, 170, 170, 0.39);
+    transition: 0.3s;
+    box-sizing: 15px;
+}
+.votre-dossier{
+    justify-content: center;
+    margin: 100px 0px 0px 10px;
+    margin-left: 10px;
+    padding-bottom: 50px;
+    box-shadow: 3px 4px 11px -3px #000000;
+}
+.votre-dossier h1{
+    text-align: center !important;
+    margin-top: -80px;
+    text-transform: uppercase;
+    padding-top: 20px;
+    border-bottom: 2px solid rgba(117, 117, 117, 0.541);
+    padding-bottom: 20px;
+}
+.question:first-child{
+    margin-top: 100px;
+}
+.question{
+    margin-top: 30px;
+    padding: 25px;
+    box-shadow: 3px 4px 11px -3px #000000;  
+}
+.question h3{
+    color: var(--main-bg-color);
+}
+.page h4{
+    margin-top: 30px;
+    padding: 20px 50px 0px 20px;
+    text-align: center !important;
+}
+.oui_div{
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    width: 30%;
+}
+.oui_non{
+    margin: 10px;
+    display: block;
+    justify-content: center;
+    padding: 5px 20px 5px 20px;
+    background-color: var(--main-bg-color);
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 20px;
+    cursor: pointer !important;
+    transition: 0.2s;
+    flex: 1;
+    outline: none !important;
+}
+.oui_non1{
+    margin: 10px;
+    display: block;
+    justify-content: center;
+    padding: 5px 20px 5px 20px;
+    background-color: var(--main-bg-color);
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 20px;
+    cursor: pointer !important;
+    transition: 0.2s;
+    flex: 1;
+    width: 10px;
+    text-decoration: none;
+    outline: none !important;
+}
+
+.oui_non1:hover{
+    transition: 0.2s;
+    color: var(--main-bg-color);
+    background-color: black;
+    cursor: pointer;
+    border: 2px solid var(--main-bg-color);
+}
+.autre_question{
+    display: none;
+}
+.autre_bouton{
+    margin-left: 265px;
+    margin-right: 265px;
+}
+.oui_non:hover{
+    transition: 0.2s;
+    color: var(--main-bg-color);
+    background-color: black;
+    border: 2px solid var(--main-bg-color);
+}
+.locataire{
+    margin-top: 20px;
+    border: 1px solid var(--main-bg-color);
+    padding: 10px;
+    display: none;
+    padding-bottom: 20px;
+}
+#ajout_loca1{
+    margin-top: 20px;
+    border: 1px solid var(--main-bg-color);
+    padding: 10px;
+    padding-bottom: 20px;
+    display: none;
+}
+#ajout_loca2{
+    margin-top: 20px;
+    border: 1px solid var(--main-bg-color);
+    padding: 10px;
+    padding-bottom: 20px;
+    display: none;
+}
+#ajout_loca3{
+    margin-top: 20px;
+    border: 1px solid var(--main-bg-color);
+    padding: 10px;
+    padding-bottom: 20px;
+    display: none;
+}
+#locataire1{
+    margin-top: 20px;
+    border: 1px solid var(--main-bg-color);
+    padding: 10px;
+    display: none;
+    padding-bottom: 20px;
+}
+.first_loca h4{
+    margin: 0px 0px 20px 100px;
+}
+.votre_statut{
+    margin: 10px 0px 10px 20px;
+    border: 2px solid var(--main-bg-color);
+    outline: none;
+    padding-right: 50px !important;
+}
+.votre_statut_first{
+    margin: 5px 0px 0px 20px;
+    padding: 3px 10px 3px 10px;
+    border: 2px solid var(--main-bg-color);
+    outline: none;
+}
+.votre_statut1{
+    margin: 10px 10px 10px 0px;
+    margin-right: 0px;
+    border: 0.3px solid rgb(102, 102, 102);
+}
+.label_satut{
+    margin: 10px 0px 0px 120px !important;
+}
+
+#ajout_locataire1{
+    margin: 20px 0px 0px 210px;
+    color: var(--main-bg-color);
+    background-color: black;
+    border: 2px solid var(--main-bg-color);
+    display: none;
+    transition: 0.2s;
+    cursor: pointer;
+}
+#ajout_locataire1:hover{
+    margin: 20px 0px 0px 210px;
+    color: var(--main-bg-color);
+    background-color: black;
+    border: 2px solid rgb(75, 75, 75);
+    display: none;
+    background-color: var(--main-bg-color);
+    color: black;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+#ajout_locataire{
+    margin: 20px 0px 0px 300px;
+    color: var(--main-bg-color);
+    background-color: black;
+    border: 2px solid var(--main-bg-color);
+    display: inline-block;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+#ajout_locataire2:hover{
+    margin: 20px 0px 0px 210px;
+    color: var(--main-bg-color);
+    background-color: black;
+    border: 2px solid rgb(75, 75, 75);
+    display: none;
+    background-color: var(--main-bg-color);
+    color: black;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+#ajout_locataire2{
+    margin: 20px 0px 0px 210px;
+    color: var(--main-bg-color);
+    background-color: black;
+    border: 2px solid var(--main-bg-color);
+    display: none;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+#supp_locataire{
+    margin: 20px 0px 0px 30px;
+    color: var(--main-bg-color);
+    background-color: black;
+    border: 2px solid var(--main-bg-color);
+    display: none;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+#supp_locataire1{
+    margin: 20px 0px 0px 30px;
+    color: var(--main-bg-color);
+    background-color: black;
+    border: 2px solid var(--main-bg-color);
+    display: none;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+#supp_locataire1:hover{
+    margin: 20px 0px 0px 30px;
+    color: var(--main-bg-color);
+    background-color: black;
+    border: 2px solid rgb(75, 75, 75);
+    display: none;
+    background-color: var(--main-bg-color);
+    color: black;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+#supp_locataire2{
+    margin: 20px 0px 0px 30px;
+    color: var(--main-bg-color);
+    background-color: black;
+    border: 2px solid var(--main-bg-color);
+    display: none;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+#supp_locataire2:hover{
+    margin: 20px 0px 0px 30px;
+    color: var(--main-bg-color);
+    background-color: black;
+    border: 2px solid rgb(75, 75, 75);
+    display: none;
+    background-color: var(--main-bg-color);
+    color: black;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+#lancer_le_test{
+    margin: 20px 0px 0px 292px;
+    padding: 5px 40px 5px 35px;
+    border: 2px solid var(--main-bg-color);
+    width: 20%;
+    display: flex;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+#ajout_locataire:hover{
+    margin: 20px 0px 0px 300px;
+    color: var(--main-bg-color);
+    background-color: black;
+    border: 2px solid rgb(75, 75, 75);
+    display: flex;
+    background-color: var(--main-bg-color);
+    color: black;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+#supp_locataire:hover{
+    margin: 20px 0px 0px 30px;
+    color: var(--main-bg-color);
+    background-color: black;
+    border: 2px solid rgb(75, 75, 75);
+    display: flex;
+    background-color: var(--main-bg-color);
+    color: black;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+#lancer_le_test:hover{
+    margin: 20px 0px 0px 292px;
+    padding: 5px 40px 5px 35px;
+    border: 2px solid var(--main-bg-color);
+    width: 20%;
+    display: flex;
+    background-color: var(--main-bg-color);
+    color: black;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+#lancer_test{
+    display: none;
+}
+.deuxieme_page h4{
+    margin-top: 30px;
+    padding-right: 10px !important;
+    padding-left: 20px;
+}
+.deuxieme_page{
+    display: flex;
+}
+.deuxieme_page p{
+    margin-top: 55px;
+}
+.form1{
+    margin: 10px;
+}
+.form_input{
+    margin: 10px;
+}
+.label_form{
+    margin: 10px;
+    font-size: 1.1em;
+}
+.label_form1{
+    margin: 10px;
+    font-size: 1.1em;
+}
+.justi{
+    margin-top: 20px;
+}
+.justi h6{
+    font-size: 1.2em;
+}
+.justi_fournir{
+    margin-top: 20px;
+    padding-left: 15px;
+}
+.dernier_page_label{
+    font-size: 1.1em;
+    margin: 20px;
+}
+.dernier_input{
+    margin-left: 20px;
+    padding-right: 100px;
+    border: 0.1px solid rgb(105, 105, 105);
+    border-radius: 7px;
+    margin-right: 100px;
+}
+.button_final{
+    color: rgb(255, 255, 255); 
+    background-color: var(--main-bg-color);
+    border: none;
+    border-radius: 10px;
+    padding: 10px 15px 10px 15px;
+    font-weight: 500;
+    margin: 100px 0px 0px 220px;
+    cursor: pointer;
+}
+#question_number_12 ul{
+    padding-left: 0px !important;
+}
+#question_number_12 ul li{
+    margin-top: 5px;
+}
+#icone_retraite{
+    margin-right: 10px;
+}
+.page{
+    display: none;
+}
+.page:first-child{
+    display: block;
+}
+header{
+    padding: 30px;
+    position: relative;
+    top: -100px;
+    padding-right: 35px !important;
+}
+.logo_reu a{
+    text-decoration: none;
+    color: black;
+    border-bottom: 2.5px solid var(--main-bg-color);
+    padding-bottom: 15px;
+}
+.logo_reu{
+    text-align: center;
+}
+.logo_reu a:hover{
+    text-decoration: none;
+    color: var(--main-bg-color);
+    cursor: pointer;
+}
+.a_cocher{
+    margin: 5px;
+}
+.justi_fournir li{
+    list-style: none;
+}
+.autre_question1{
+    display: none;
+}
+.autre_question1 p{
+    margin-top: 30px;
+    padding: 15px 20px 15px 20px;
+    background-color: blanchedalmond;
+    font-size: 1.1em;
+    color: gray;
+    border: 0.3px solid rgb(251, 224, 182);
+}
+.autre_question2{
+    text-align: center;
+    display: none;
+}
+.question_form h4{
+    padding: 10px;
+}
+#question_number_1{
+    display: none;
+    transition: 0.7s;
+}
+#question_number_2{
+    display: none;
+    transition: 0.7s;
+}
+#question_number_3{
+    display: none;
+    transition: 0.7s;
+}
+#question_number_4{
+    display: none;
+    transition: 0.7s;
+}
+#question_number_5{
+    display: none;
+    transition: 0.7s;
+}
+#question_number_6{
+    display: none;
+    transition: 0.7s;
+}
+#question_number_7{
+    display: none;
+    transition: 0.7s;
+}
+#question_number_8{
+    display: none;
+    transition: 0.7s;
+}
+#question_number_9{
+    display: none;
+    transition: 0.7s;
+}
+#question_number_10{
+    display: none;
+    transition: 0.7s;
+}
+#question_number_11{
+    display: none;
+    transition: 0.7s;
+}
+#question_number_12{
+    display: none;
+    transition: 0.7s;
+}
+.select_jour{
+    margin: 15px;
+    padding: 5px 15px 5px 15px;
+    border: 2px solid var(--main-bg-color);
+    outline: none;
+}
+#second_icone{
+    display: inline-block;
+    position: ;
+}
+#first_icone{
+    display: none;
+    transition: 1s;
+}
+#second_icone{
+    display: none;
+    transition: 1s;
+}
+#third_icone{
+    display: none;
+    transition: 1s;
+}
+#fourth_icone{
+    display: none;
+    transition: 1s;
+}
+.les_statuts{
+    padding-bottom: 20px;
+    margin-right: -10px !important;
+}
+#loca_question_1{
+    display: none;
+}
+#loca_question_2{
+    display: none;
+}
+#loca_question_3{
+    display: none;
+}
+#loca_question_4{
+    display: none;
+}
+#loca_question_5{
+    display: none;
+}
+#loca_question_6{
+    display: none;
+}
+#loca_question_7{
+    display: none;
+}
+#loca_question_11{
+    display: none;
+}
+#loca_question_22{
+    display: none;
+}
+#loca_question_33{
+    display: none;
+}
+#loca_question_44{
+    display: none;
+}
+#loca_question_55{
+    display: none;
+}
+#loca_question_66{
+    display: none;
+}
+#loca_question_77{
+    display: none;
+}
+#loca_question_111{
+    display: none;
+}
+#loca_question_222{
+    display: none;
+}
+#loca_question_333{
+    display: none;
+}
+#loca_question_444{
+    display: none;
+}
+#loca_question_555{
+    display: none;
+}
+#loca_question_666{
+    display: none;
+}
+#loca_question_777{
+    display: none;
+}
+#loca_question_1111{
+    display: none;
+}
+#loca_question_2222{
+    display: none;
+}
+#loca_question_3333{
+    display: none;
+}
+#loca_question_4444{
+    display: none;
+}
+#loca_question_5555{
+    display: none;
+}
+#loca_question_6666{
+    display: none;
+}
+#loca_question_7777{
+    display: none;
+}
+#lancer_test{
+    display: none;
+}
+#ajout_loca1{
+    display: none;
+}
+#ajout_loca2{
+    display: none;
+}
+.dossier_formulaire{
+    display: none;
+}
+.demarrer_acceuil{
+    display: flex;
+    flex-direction: column;
+}
+.demarrer_acceuil h4{
+    text-align: center;
+    margin-top: 30px;
+}
+.demarrer_acceuil p{
+    margin: 30px 0px 15px 40px;
+}
+.demarrer_acceuil ul{
+    margin: 10px 0px 0px 50px;
+}
+.demarrer_acceuil ul li{
+    margin: 7px 0px 0px 0px;
+}
+.demarrer_acceuil button{
+    margin: 50px;
+    padding: 5px 30px 5px 30px;
+    font-size: 1em;
+    border-radius: 10px;
+    border: 2px solid black;
+    outline: none;
+    transition: 0.2s;
+    cursor: pointer;
+    background-color: var(--main-bg-color);
+}
+.demarrer_acceuil button:hover{
+    background-color: black;
+    transition: 0.2s;
+    color: var(--main-bg-color);
+    cursor: pointer;
+    border: 2px solid var(--main-bg-color);
+}

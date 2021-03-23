@@ -9,412 +9,8 @@
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static '/css/styles_dossier.css' %}">
 </head>
-
-<style>
-    body{
-        height: fit-content !important;
-        --main-bg-color: rgb(240, 18, 18);
-    }
-    .home{
-        width: 100vw;
-        font-family: 'Oswald', sans-serif;
-    }
-    .ajout_dossier{
-        display: flex;
-        background-color: rgba(0, 0, 255, 0);
-        height: 70vh;
-        margin-top: 100px;
-        width: 24vh;
-        justify-content: center;
-        position: relative;
-        box-shadow: 3px 4px 11px -3px #000000;  
-    }
-    .ajout_dossier h3{
-        text-align: center;
-        font-weight: 700;
-        text-transform: uppercase;
-        font-size: 1.5em;
-        display: flex;
-        margin: 20px 10px 0px 10px;
-        position: absolute;
-    }
-    .premier_dossier{
-        display: flex;
-        justify-content: center;
-        text-align: center;
-    }
-    .premier_dossier ul{
-        display: flex;
-        flex-direction: column;
-        align-content: center;
-        list-style: none;
-        padding: 0;
-        padding-top: 100px !important;
-    }
-    .premier_dossier ul li a{
-        text-decoration: none;
-        color: var(--main-bg-color);
-        padding: 15px 35px 15px 28px;
-        font-size: 1.2em;
-        transition: 0.3s;
-        font-weight: 500;
-    }
-    .premier_dossier ul li a:hover{
-        background-color: rgba(170, 170, 170, 0.39);
-        transition: 0.3s;
-        box-sizing: 15px;
-    }
-    .votre-dossier{
-        justify-content: center;
-        margin: 100px 0px 0px 10px;
-        margin-left: 10px;
-        padding-bottom: 50px;
-        box-shadow: 3px 4px 11px -3px #000000;
-    }
-    .votre-dossier h1{
-        text-align: center !important;
-        margin-top: -80px;
-        text-transform: uppercase;
-        padding-top: 20px;
-        border-bottom: 2px solid rgba(117, 117, 117, 0.541);
-        padding-bottom: 20px;
-    }
-    .question:first-child{
-        margin-top: 100px;
-    }
-    .question{
-        margin-top: 30px;
-        padding: 25px;
-        box-shadow: 3px 4px 11px -3px #000000;  
-    }
-    .question h3{
-        color: var(--main-bg-color);
-    }
-    .page h4{
-        margin-top: 30px;
-        padding: 20px 50px 0px 20px;
-        text-align: center !important;
-    }
-    .oui_div{
-        display: flex;
-        flex-direction: row;
-        margin: auto;
-        width: 30%;
-    }
-    .oui_non{
-        margin: 10px;
-        display: block;
-        justify-content: center;
-        padding: 5px 20px 5px 20px;
-        background-color: var(--main-bg-color);
-        border: 0.5px solid rgb(0, 0, 0);
-        border-radius: 20px;
-        cursor: pointer !important;
-        transition: 0.2s;
-        flex: 1;
-        outline: none !important;
-    }
-    .oui_non1{
-        margin: 10px;
-        display: block;
-        justify-content: center;
-        padding: 5px 20px 5px 20px;
-        background-color: var(--main-bg-color);
-        border: 0.5px solid rgb(0, 0, 0);
-        border-radius: 20px;
-        cursor: pointer !important;
-        transition: 0.2s;
-        flex: 1;
-        width: 10px;
-        text-decoration: none;
-        outline: none !important;
-    }
-    .oui_non:focus{
-        border: none;
-        cursor: pointer;
-    }
-    .oui_non1:hover{
-        transition: 0.2s;
-        color: var(--main-bg-color);
-        background-color: black;
-        cursor: pointer;
-    }
-    .autre_question{
-        display: none;
-    }
-    .autre_bouton{
-        margin-left: 265px;
-        margin-right: 265px;
-    }
-    .oui_non:hover{
-        transition: 0.2s;
-        color: var(--main-bg-color);
-        background-color: black;
-    }
-    .locataire{
-        margin-top: 20px;
-        border: 1px solid var(--main-bg-color);
-        padding: 10px;
-        display: none;
-        padding-bottom: 20px;
-    }
-    #locataire1{
-        margin-top: 20px;
-        border: 1px solid var(--main-bg-color);
-        padding: 10px;
-        padding-bottom: 20px;
-        display: none;
-    }
-    .first_loca h4{
-        margin: 0px 0px 20px 100px;
-    }
-    .votre_statut{
-        margin: 10px 0px 10px 20px;
-        border: 2px solid var(--main-bg-color);
-        outline: none;
-        padding-right: 50px !important;
-    }
-    .votre_statut_first{
-        margin: 5px 0px 0px 20px;
-        padding: 3px 10px 3px 10px;
-        border: 2px solid var(--main-bg-color);
-        outline: none;
-    }
-    .votre_statut1{
-        margin: 10px 10px 10px 0px;
-        margin-right: 0px;
-        border: 0.3px solid rgb(102, 102, 102);
-    }
-    .label_satut{
-        margin: 10px 0px 0px 120px !important;
-    }
-    
-    #ajout_locataire{
-        margin: 20px 0px 0px 300px;
-        color: var(--main-bg-color);
-        background-color: black;
-        border: 0.5px solid rgb(75, 75, 75);
-        display: flex;
-    }
-    #lancer_le_test{
-        margin: 20px 0px 0px 292px;
-        padding: 5px 40px 5px 35px;
-        border: 0.5px solid var(--main-bg-color);
-        width: 20%;
-        display: flex;
-    }
-    #lancer_test{
-        display: none;
-    }
-    .deuxieme_page h4{
-        margin-top: 30px;
-        padding-right: 10px !important;
-        padding-left: 20px;
-    }
-    .deuxieme_page{
-        display: flex;
-    }
-    .deuxieme_page p{
-        margin-top: 55px;
-    }
-    .form1{
-        margin: 10px;
-    }
-    .form_input{
-        margin: 10px;
-    }
-    .label_form{
-        margin: 10px;
-        font-size: 1.1em;
-    }
-    .label_form1{
-        margin: 10px;
-        font-size: 1.1em;
-    }
-    .justi{
-        margin-top: 20px;
-    }
-    .justi h6{
-        font-size: 1.2em;
-    }
-    .justi_fournir{
-        margin-top: 20px;
-        padding-left: 15px;
-    }
-    .dernier_page_label{
-        font-size: 1.1em;
-        margin: 20px;
-    }
-    .dernier_input{
-        margin-left: 20px;
-        padding-right: 100px;
-        border: 0.1px solid rgb(105, 105, 105);
-        border-radius: 7px;
-        margin-right: 100px;
-    }
-    .button_final{
-        color: rgb(255, 255, 255); 
-        background-color: var(--main-bg-color);
-        border: none;
-        border-radius: 10px;
-        padding: 10px 15px 10px 15px;
-        font-weight: 500;
-        margin: 100px 0px 0px 220px;
-        cursor: pointer;
-    }
-    .page{
-        display: none;
-    }
-    .page:first-child{
-        display: block;
-    }
-    header{
-        padding: 30px;
-        position: relative;
-        top: -100px;
-        padding-right: 35px !important;
-    }
-    .logo_reu a{
-        text-decoration: none;
-        color: black;
-        border-bottom: 2.5px solid var(--main-bg-color);
-        padding-bottom: 15px;
-    }
-    .logo_reu{
-        text-align: center;
-    }
-    .logo_reu a:hover{
-        text-decoration: none;
-        color: var(--main-bg-color);
-        cursor: pointer;
-    }
-    .a_cocher{
-        margin: 5px;
-    }
-    .justi_fournir li{
-        list-style: none;
-    }
-    .autre_question1{
-        display: none;
-    }
-    .autre_question1 p{
-        margin-top: 30px;
-        padding: 15px 20px 15px 20px;
-        background-color: blanchedalmond;
-        font-size: 1.1em;
-        color: gray;
-        border: 0.3px solid rgb(251, 224, 182);
-    }
-    .autre_question2{
-        text-align: center;
-        display: none;
-    }
-    .question_form h4{
-        padding: 10px;
-    }
-    #question_number_1{
-        display: none;
-        transition: 0.7s;
-    }
-    #question_number_2{
-        display: none;
-        transition: 0.7s;
-    }
-    #question_number_3{
-        display: none;
-        transition: 0.7s;
-    }
-    #question_number_4{
-        display: none;
-        transition: 0.7s;
-    }
-    #question_number_5{
-        display: none;
-        transition: 0.7s;
-    }
-    #question_number_6{
-        display: none;
-        transition: 0.7s;
-    }
-    #question_number_7{
-        display: none;
-        transition: 0.7s;
-    }
-    #question_number_8{
-        display: none;
-        transition: 0.7s;
-    }
-    #question_number_9{
-        display: none;
-        transition: 0.7s;
-    }
-    #question_number_10{
-        display: none;
-        transition: 0.7s;
-    }
-    #question_number_11{
-        display: none;
-        transition: 0.7s;
-    }
-    .select_jour{
-        margin: 15px;
-        padding: 5px 15px 5px 15px;
-        border: 2px solid var(--main-bg-color);
-        outline: none;
-    }
-    #second_icone{
-        display: inline-block;
-        position: ;
-    }
-    #first_icone{
-        display: none;
-        transition: 1s;
-    }
-    #second_icone{
-        display: none;
-        transition: 1s;
-    }
-    #third_icone{
-        display: none;
-        transition: 1s;
-    }
-    #fourth_icone{
-        display: none;
-        transition: 1s;
-    }
-    .les_statuts{
-        padding-bottom: 20px;
-        margin-right: -10px !important;
-    }
-    #loca_question_1{
-        display: none;
-    }
-    #loca_question_2{
-        display: none;
-    }
-    #loca_question_3{
-        display: none;
-    }
-    #loca_question_4{
-        display: none;
-    }
-    #loca_question_6{
-        display: none;
-    }
-    #loca_question_7{
-        display: none;
-    }
-    #lancer_test{
-        display: none;
-    }
-    #ajout_loca1{
-        display: none;
-    }
-    #ajout_loca2{
-        display: none;
-    }
-</style>
 
 <body style="overflow-x: hidden;">
     <div class="container-fluid home">
@@ -451,7 +47,17 @@
                         </div>
                     </header>
                     <h1>Votre dossier</h1>
-                    <form style="width: 100%;">
+                    <div class="container-fluid demarrer_acceuil">
+                        <h4>Bienvenue sur notre outil de constitution et de validation du dossier locataire</h4>
+                        <p>Sur cette page vous allez pouvoir :</p>
+                        <ul>
+                            <li>Évaluer l'éligibilité des candidats à l'assurance loyer impayé</li>
+                            <li>Ajouter et valider les justificatifs</li>
+                            <li>Récupérer un dossier pdf vous permettant de souscrire</li>
+                        </ul>
+                        <h4><button id="bouton_demarrage">Démarrer le dossier locataire</button></h4>
+                    </div>
+                    <form style="width: 100%;" class="dossier_formulaire">
                         <div class="page">
                             <div class="container-fluid">
                                 <div id="page1">
@@ -556,59 +162,59 @@
 
                                 <div class="container-fluid" id="ajout_loca1">
                                     <div class="row first_loca">
-                                        <h4>Locataire 1</h4>
+                                        <h4>Locataire 2</h4>
                                     </div>
                                     <div class="row les_statuts">
                                         <label for="Statut du locataire" class="label_satut">Statut du locataire</label>
-                                        <select name="Statut_locataire" id="" class="votre_statut_first" onchange="showMessage(this.value);">
+                                        <select name="Statut_locataire" id="" class="votre_statut_first" onchange="showMessageLoca2(this.value);">
                                             <option selected="true" style='display: none'>--votre statut--</option>
-                                            <option value="CDI hors période d'essai">CDI hors période d'essai</option>
-                                            <option value="CDI en période d'essaie">CDI en période d'essaie</option>
-                                            <option value="Étudiant, alternant">Étudiant, alternant</option>
-                                            <option value="Fonctionnaire">Fonctionnaire</option>
-                                            <option value="Profession libérale">Profession libérale</option>
-                                            <option value="Indépendant">Indépendant</option>
-                                            <option value="Salarié en CDD">Salarié en CDD</option>
-                                            <option value="Intérimaire">Intérimaire</option>
-                                            <option value="intermitent du spectacle">intermitent du spectacle</option>
-                                            <option value="Retraité">Retraité</option>
-                                            <option value="Sans emploie">Sans emploie</option> 
+                                            <option value="1CDI hors période d'essai">CDI hors période d'essai</option>
+                                            <option value="1CDI en période d'essaie">CDI en période d'essaie</option>
+                                            <option value="1Étudiant, alternant">Étudiant, alternant</option>
+                                            <option value="1Fonctionnaire">Fonctionnaire</option>
+                                            <option value="1Profession libérale">Profession libérale</option>
+                                            <option value="1Indépendant">Indépendant</option>
+                                            <option value="1Salarié en CDD">Salarié en CDD</option>
+                                            <option value="1Intérimaire">Intérimaire</option>
+                                            <option value="1intermitent du spectacle">intermitent du spectacle</option>
+                                            <option value="1Retraité">Retraité</option>
+                                            <option value="1Sans emploie">Sans emploie</option> 
                                         </select>
                                     </div>
-                                    <div class="row" id="loca_question_4">
+                                    <div class="row" id="loca_question_44">
                                         <label for="Revenus du locataire" class="label_satut">Revenus du locataire</label>
                                         <input type="number" class="votre_statut" min="0" max="9999999999">
                                         <button class="votre_statut1">€/mois</button>
                                     </div>
-                                    <div class="row" id="loca_question_1">
-                                        <h5 style="margin-left: 120px;">Garant</h5>
+                                    <div class="row" id="loca_question_11">
+                                        <h5 style="margin-left: 120px;">Garant 2</h5>
                                         <label for="statut du garant" class="label_satut">statut du garant</label>
-                                        <select name="Statut_locataire" id="" class="votre_statut" onchange="showMessage1(this.value);">
+                                        <select name="Statut_locataire" id="" class="votre_statut" onchange="showMessage1Loca2(this.value);">
                                             <option selected="true" style='display: none'>--votre statut--</option>
-                                            <option value="CDI hors période d'essai">CDI hors période d'essai</option>
-                                            <option value="Fonctionnaire">Fonctionnaire</option>
-                                            <option value="Profession libérale">Profession libérale</option>
-                                            <option value="Indépendant">Indépendant</option>
-                                            <option value="Salarié en CDD">Salarié en CDD</option>
-                                            <option value="Retraité">Retraité</option>
+                                            <option value="1CDI hors période d'essai">CDI hors période d'essai</option>
+                                            <option value="1Fonctionnaire">Fonctionnaire</option>
+                                            <option value="1Profession libérale">Profession libérale</option>
+                                            <option value="1Indépendant">Indépendant</option>
+                                            <option value="1Salarié en CDD">Salarié en CDD</option>
+                                            <option value="1Retraité">Retraité</option>
                                         </select>
                                     </div>
-                                    <div class="row" id="loca_question_7">
+                                    <div class="row" id="loca_question_77">
                                         <label for="Revenus du locataire" class="label_satut">Revenus du garant</label>
                                         <input type="number" class="votre_statut" min="0" max="9999999999">
                                         <button class="votre_statut1">€/mois</button>
                                     </div>
-                                    <div class="row" id="loca_question_5">
+                                    <div class="row" id="loca_question_55">
                                         <label for="Anciennete" class="label_satut">Ancienneté de l'activité</label>
-                                        <select name="Statut_locataire" id="" class="votre_statut" onchange="showMessage(this.value);">
+                                        <select name="Statut_locataire" id="" class="votre_statut">
                                             <option selected="true" style='display: none'>--votre statut--</option>
                                             <option value="Inférieure a 2 ans">Inférieure a 2 ans</option>
                                             <option value="Supérieure a 2 ans">Supérieure a 2 ans</option>
                                         </select>
                                     </div>
-                                    <div class="row" id="loca_question_6">
+                                    <div class="row" id="loca_question_66">
                                         <label for="fin de contrat" class="label_satut">Date de fin de contrat</label>
-                                        <select name="Statut_locataire" id="" class="votre_statut" onchange="showMessage(this.value);">
+                                        <select name="Statut_locataire" id="" class="votre_statut">
                                             <option selected="true" style='display: none'>--votre statut--</option>
                                             <option value="Dans moins de 8 mois">Dans moins de 8 mois</option>
                                             <option value="Dans plus de 8 mois">Dans plus de 8 mois</option>
@@ -618,49 +224,49 @@
 
                                 <div class="container-fluid" id="ajout_loca2">
                                     <div class="row first_loca">
-                                        <h4>Locataire 1</h4>
+                                        <h4>Locataire 3</h4>
                                     </div>
                                     <div class="row les_statuts">
                                         <label for="Statut du locataire" class="label_satut">Statut du locataire</label>
-                                        <select name="Statut_locataire" id="" class="votre_statut_first" onchange="showMessage(this.value);">
+                                        <select name="Statut_locataire" id="" class="votre_statut_first" onchange="showMessageLoca3(this.value);">
                                             <option selected="true" style='display: none'>--votre statut--</option>
-                                            <option value="CDI hors période d'essai">CDI hors période d'essai</option>
-                                            <option value="CDI en période d'essaie">CDI en période d'essaie</option>
-                                            <option value="Étudiant, alternant">Étudiant, alternant</option>
-                                            <option value="Fonctionnaire">Fonctionnaire</option>
-                                            <option value="Profession libérale">Profession libérale</option>
-                                            <option value="Indépendant">Indépendant</option>
-                                            <option value="Salarié en CDD">Salarié en CDD</option>
-                                            <option value="Intérimaire">Intérimaire</option>
-                                            <option value="intermitent du spectacle">intermitent du spectacle</option>
-                                            <option value="Retraité">Retraité</option>
-                                            <option value="Sans emploie">Sans emploie</option> 
+                                            <option value="2CDI hors période d'essai">CDI hors période d'essai</option>
+                                            <option value="2CDI en période d'essaie">CDI en période d'essaie</option>
+                                            <option value="2Étudiant, alternant">Étudiant, alternant</option>
+                                            <option value="2Fonctionnaire">Fonctionnaire</option>
+                                            <option value="2Profession libérale">Profession libérale</option>
+                                            <option value="2Indépendant">Indépendant</option>
+                                            <option value="2Salarié en CDD">Salarié en CDD</option>
+                                            <option value="2Intérimaire">Intérimaire</option>
+                                            <option value="2intermitent du spectacle">intermitent du spectacle</option>
+                                            <option value="2Retraité">Retraité</option>
+                                            <option value="2Sans emploie">Sans emploie</option> 
                                         </select>
                                     </div>
-                                    <div class="row" id="loca_question_4">
+                                    <div class="row" id="loca_question_444">
                                         <label for="Revenus du locataire" class="label_satut">Revenus du locataire</label>
                                         <input type="number" class="votre_statut" min="0" max="9999999999">
                                         <button class="votre_statut1">€/mois</button>
                                     </div>
-                                    <div class="row" id="loca_question_1">
-                                        <h5 style="margin-left: 120px;">Garant</h5>
+                                    <div class="row" id="loca_question_111">
+                                        <h5 style="margin-left: 120px;">Garant 3</h5>
                                         <label for="statut du garant" class="label_satut">statut du garant</label>
-                                        <select name="Statut_locataire" id="" class="votre_statut" onchange="showMessage1(this.value);">
+                                        <select name="Statut_locataire" id="" class="votre_statut" onchange="showMessage1Loca3(this.value);">
                                             <option selected="true" style='display: none'>--votre statut--</option>
-                                            <option value="CDI hors période d'essai">CDI hors période d'essai</option>
-                                            <option value="Fonctionnaire">Fonctionnaire</option>
-                                            <option value="Profession libérale">Profession libérale</option>
-                                            <option value="Indépendant">Indépendant</option>
-                                            <option value="Salarié en CDD">Salarié en CDD</option>
-                                            <option value="Retraité">Retraité</option>
+                                            <option value="2CDI hors période d'essai">CDI hors période d'essai</option>
+                                            <option value="2Fonctionnaire">Fonctionnaire</option>
+                                            <option value="2Profession libérale">Profession libérale</option>
+                                            <option value="2Indépendant">Indépendant</option>
+                                            <option value="2Salarié en CDD">Salarié en CDD</option>
+                                            <option value="2Retraité">Retraité</option>
                                         </select>
                                     </div>
-                                    <div class="row" id="loca_question_7">
+                                    <div class="row" id="loca_question_777">
                                         <label for="Revenus du locataire" class="label_satut">Revenus du garant</label>
                                         <input type="number" class="votre_statut" min="0" max="9999999999">
                                         <button class="votre_statut1">€/mois</button>
                                     </div>
-                                    <div class="row" id="loca_question_5">
+                                    <div class="row" id="loca_question_555">
                                         <label for="Anciennete" class="label_satut">Ancienneté de l'activité</label>
                                         <select name="Statut_locataire" id="" class="votre_statut" onchange="showMessage(this.value);">
                                             <option selected="true" style='display: none'>--votre statut--</option>
@@ -668,7 +274,69 @@
                                             <option value="Supérieure a 2 ans">Supérieure a 2 ans</option>
                                         </select>
                                     </div>
-                                    <div class="row" id="loca_question_6">
+                                    <div class="row" id="loca_question_666">
+                                        <label for="fin de contrat" class="label_satut">Date de fin de contrat</label>
+                                        <select name="Statut_locataire" id="" class="votre_statut" onchange="showMessage(this.value);">
+                                            <option selected="true" style='display: none'>--votre statut--</option>
+                                            <option value="Dans moins de 8 mois">Dans moins de 8 mois</option>
+                                            <option value="Dans plus de 8 mois">Dans plus de 8 mois</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="container-fluid" id="ajout_loca3">
+                                    <div class="row first_loca">
+                                        <h4>Locataire 4</h4>
+                                    </div>
+                                    <div class="row les_statuts">
+                                        <label for="Statut du locataire" class="label_satut">Statut du locataire</label>
+                                        <select name="Statut_locataire" id="" class="votre_statut_first" onchange="showMessageLoca4(this.value);">
+                                            <option selected="true" style='display: none'>--votre statut--</option>
+                                            <option value="3CDI hors période d'essai">CDI hors période d'essai</option>
+                                            <option value="3CDI en période d'essaie">CDI en période d'essaie</option>
+                                            <option value="3Étudiant, alternant">Étudiant, alternant</option>
+                                            <option value="3Fonctionnaire">Fonctionnaire</option>
+                                            <option value="3Profession libérale">Profession libérale</option>
+                                            <option value="3Indépendant">Indépendant</option>
+                                            <option value="3Salarié en CDD">Salarié en CDD</option>
+                                            <option value="3Intérimaire">Intérimaire</option>
+                                            <option value="3intermitent du spectacle">intermitent du spectacle</option>
+                                            <option value="3Retraité">Retraité</option>
+                                            <option value="3Sans emploie">Sans emploie</option> 
+                                        </select>
+                                    </div>
+                                    <div class="row" id="loca_question_4444">
+                                        <label for="Revenus du locataire" class="label_satut">Revenus du locataire</label>
+                                        <input type="number" class="votre_statut" min="0" max="9999999999">
+                                        <button class="votre_statut1">€/mois</button>
+                                    </div>
+                                    <div class="row" id="loca_question_1111">
+                                        <h5 style="margin-left: 120px;">Garant 4</h5>
+                                        <label for="statut du garant" class="label_satut">statut du garant</label>
+                                        <select name="Statut_locataire" id="" class="votre_statut" onchange="showMessage1Loca4(this.value);">
+                                            <option selected="true" style='display: none'>--votre statut--</option>
+                                            <option value="3CDI hors période d'essai">CDI hors période d'essai</option>
+                                            <option value="3Fonctionnaire">Fonctionnaire</option>
+                                            <option value="3Profession libérale">Profession libérale</option>
+                                            <option value="3Indépendant">Indépendant</option>
+                                            <option value="3Salarié en CDD">Salarié en CDD</option>
+                                            <option value="3Retraité">Retraité</option>
+                                        </select>
+                                    </div>
+                                    <div class="row" id="loca_question_7777">
+                                        <label for="Revenus du locataire" class="label_satut">Revenus du garant</label>
+                                        <input type="number" class="votre_statut" min="0" max="9999999999">
+                                        <button class="votre_statut1">€/mois</button>
+                                    </div>
+                                    <div class="row" id="loca_question_5555">
+                                        <label for="Anciennete" class="label_satut">Ancienneté de l'activité</label>
+                                        <select name="Statut_locataire" id="" class="votre_statut" onchange="showMessage(this.value);">
+                                            <option selected="true" style='display: none'>--votre statut--</option>
+                                            <option value="Inférieure a 2 ans">Inférieure a 2 ans</option>
+                                            <option value="Supérieure a 2 ans">Supérieure a 2 ans</option>
+                                        </select>
+                                    </div>
+                                    <div class="row" id="loca_question_6666">
                                         <label for="fin de contrat" class="label_satut">Date de fin de contrat</label>
                                         <select name="Statut_locataire" id="" class="votre_statut" onchange="showMessage(this.value);">
                                             <option selected="true" style='display: none'>--votre statut--</option>
@@ -693,6 +361,11 @@
                                 <div class="container-fluid" id="lancer_test">
                                     <div class="row">
                                         <input type="button" id="ajout_locataire" value="+ Ajouter un locataire">
+                                        <input type="button" id="ajout_locataire1" value="+ Ajouter un 3eme locataire">
+                                        <input type="button" id="ajout_locataire2" value="+ Ajouter un 4 eme locataire">
+                                        <input type="button" id="supp_locataire" value="- Supprimer le locataire">
+                                        <input type="button" id="supp_locataire1" value="- Supprimer le locataire 3">
+                                        <input type="button" id="supp_locataire2" value="- Supprimer le locataire 4">
                                     </div>
                                     <div class="row">
                                         <input type="button" id="lancer_le_test" value="Lancer le test">
@@ -705,7 +378,7 @@
                             <div class="container-fluid" id="page2">
                                 <div class="row deuxieme_page">
                                     <h4>Justificatifs locataire 1</h4>
-                                    <p>CDI hors période d'essaie</p>
+                                    <!-- <p>CDI hors période d'essaie</p> -->
                                 </div>
                                 <div class="row">
                                     <div class="col-6">
@@ -780,7 +453,7 @@
                                                 <label for="ajouter_file">3 : j'ajoute le fichier</label>
                                             </div>
                                             <div class="row">
-                                                <button style="background-color: orange;"><i class="fas fa-cloud-upload-alt">Ajouter</i></button>
+                                                <button style="background-color:  var(--main-bg-color);"><i class="fas fa-cloud-upload-alt">Ajouter</i></button>
                                             </div>
                                         </div>
                                     </div>
@@ -895,366 +568,19 @@
                     <h3>Définition revenus retraités</h3>
                     <p>Pour les retraités retenez les revenus indiqués sur le dernier avis d'imposition.</p>
                 </div>
+                <!-- <div class="question" id="question_number_12">
+                    <h3>Revenus complémentaires éligibles</h3>
+                    <ul>
+                        <li style="list-style: none;"><i class="fas fa-check" id="icone_retraite"></i>Allocations familiales, logement, adultes handicapés</li>
+                        <li style="list-style: none;"><i class="fas fa-check" id="icone_retraite"></i>Pensions alimentaires</li>
+                        <li style="list-style: none;"><i class="fas fa-check" id="icone_retraite"></i>Revenus fonciers</li>
+                    </ul>
+                </div> -->
             </div>
         </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script>
-         
-        // De la page 1 a la 3
-
-        const pages = document.getElementsByClassName("page");
-        const header = document.querySelector("header");
-        const nbPages = pages.length; // nombre de page du formulaire
-        const pageSelect = document.getElementsByClassName('pageSelect');
-
-        for(let i = 0; i < pages.length; i++){
-            pageSelect[i].addEventListener('click', () => {
-                for(let x = 0; x < pages.length; x++){
-                    pages[x].style.display = "none";
-                    pageSelect[x].classList.remove('active');
-                }
-                pages[i].style.display = "block";
-                pageSelect[i].classList.add('active');
-            })
-        }
-
-        //ajout d'un locataire
-
-        var ajout_loca_bouton = document.getElementById('ajout_locataire');
-
-        ajout_loca_bouton.addEventListener('click', ajouter_le_locataire)
-
-        function ajouter_le_locataire(){
-            document.getElementById('ajout_loca1').style.display="block";
-        }
-
-        // bouton principal oui et non 
-
-        var bouton_non = document.getElementById('non');
-
-        bouton_non.addEventListener('click', afficher_locataire)
-
-        function afficher_locataire(){
-            document.getElementsByClassName('autre_question1')[0].style.display = 'none';
-            document.getElementById('second_icone').style.display = 'inline-block';
-            document.getElementsByClassName('locataire')[0].style.display = 'block';
-            document.getElementsByClassName('autre_question')[0].style.display = 'none';
-            document.getElementsByClassName('autre_question2')[0].style.display = 'none';
-            document.getElementById('first_icone').style.display = 'none';
-            document.getElementById('lancer_test').style.display = 'block';
-            document.getElementById('fourth_icone').style.display = 'none';
-            document.getElementById('third_icone').style.display = 'none';
-            document.getElementById('loca_question_1').style.display="none";
-            document.getElementById('locataire1').style.display="none";
-            document.getElementById('loca_question_5').style.display="none";
-        }
-
-        var bouton_oui = document.getElementById('oui');
-
-        bouton_oui.addEventListener('click', afficher_autre_question)
-
-        function afficher_autre_question(){
-            document.getElementsByClassName('autre_question')[0].style.display = 'block';
-            document.getElementById('first_icone').style.display = 'inline-block';
-            document.getElementById('second_icone').style.display = 'none';
-            document.getElementsByClassName('locataire')[0].style.display = 'none';
-            document.getElementsByClassName('autre_question1')[0].style.display = 'none';
-            document.getElementsByClassName('autre_question2')[0].style.display = 'none';
-            document.getElementById('question_number_5').style.display="none";
-            document.getElementById('question_number_6').style.display="none";
-            document.getElementById('question_number_7').style.display="none";
-            document.getElementById('question_number_8').style.display="none";
-            document.getElementById('question_number_9').style.display="none";
-            document.getElementById('question_number_10').style.display="none";
-            document.getElementById('question_number_11').style.display="none";
-            document.getElementById('loca_question_1').style.display="none";
-            document.getElementById('locataire1').style.display="none";
-        }
-
-        // bouton secondaire oui et non
-
-        var bouton_oui1 = document.getElementById('oui1');
-
-        bouton_oui1.addEventListener('click', afficher_para_impo)
-
-        function afficher_para_impo(){
-            document.getElementsByClassName('autre_question2')[0].style.display = 'none';
-            document.getElementsByClassName('autre_question1')[0].style.display = 'block';
-            document.getElementById('third_icone').style.display = 'inline-block';
-            document.getElementById('fourth_icone').style.display = 'none';
-            document.getElementById('question_number_1').style.display="none";
-            document.getElementById('question_number_4').style.display="none";
-            document.getElementById('question_number_2').style.display="none";
-            document.getElementById('question_number_3').style.display="none";
-            document.getElementById('loca_question_1').style.display="none";
-            document.getElementById('locataire1').style.display="none";
-        }
-
-        var bouton_non1 = document.getElementById('non1');
-
-        bouton_non1.addEventListener('click',  afficher_les_jours)
-
-        function afficher_les_jours(){
-            document.getElementsByClassName('autre_question1')[0].style.display = 'none';
-            document.getElementsByClassName('autre_question2')[0].style.display = 'block';
-            document.getElementById('fourth_icone').style.display = 'inline-block';
-            document.getElementById('third_icone').style.display = 'none';
-            document.getElementById('loca_question_1').style.display="none";
-            document.getElementById('locataire1').style.display="none";
-        }
-
-        // afficher les questions suivant le select
-
-        function showMe(value){
-            if (value=="numberQues1"){
-                document.getElementById('question_number_1').style.display="block";
-                document.getElementById('question_number_4').style.display="block";
-                document.getElementById('question_number_2').style.display="none";
-                document.getElementById('question_number_3').style.display="none";
-                document.getElementsByClassName('locataire')[0].style.display = 'block';
-            }
-
-            if (value=="numberQues2"){
-                document.getElementById('question_number_2').style.display="none";
-                document.getElementById('question_number_3').style.display="block";
-                document.getElementById('question_number_1').style.display="none";
-                document.getElementById('question_number_4').style.display="block";
-                document.getElementsByClassName('locataire')[0].style.display = 'none';
-            }
-
-            if (value=="numberQues3"){
-                document.getElementById('question_number_3').style.display="block";
-                document.getElementById('question_number_1').style.display="none";
-                document.getElementById('question_number_4').style.display="none";
-                document.getElementById('question_number_2').style.display="none";
-                document.getElementsByClassName('locataire')[0].style.display = 'none';
-            }
-        }
-
-        // afficher les questions suivant le status du garant 
-
-        function showMessage1(value){
-            if (value=="CDI hors période d'essai"){
-                document.getElementById('loca_question_7').style.display="block";
-                document.getElementById('loca_question_5').style.display="none";
-                document.getElementById('loca_question_6').style.display="none";
-            }
-
-            if (value=="Fonctionnaire"){
-                document.getElementById('loca_question_7').style.display="block";
-                document.getElementById('loca_question_5').style.display="none";
-                document.getElementById('loca_question_6').style.display="none";
-            }
-
-            if (value=="Profession libérale"){
-                document.getElementById('loca_question_7').style.display="block";
-                document.getElementById('loca_question_5').style.display="block";
-                document.getElementById('loca_question_6').style.display="none";
-            }
-
-            if (value=="Indépendant"){
-                document.getElementById('loca_question_7').style.display="block";
-                document.getElementById('loca_question_5').style.display="block";
-                document.getElementById('loca_question_6').style.display="none";
-            }
-
-            if (value=="Salarié en CDD"){
-                document.getElementById('loca_question_7').style.display="block";
-                document.getElementById('loca_question_5').style.display="none";
-                document.getElementById('loca_question_6').style.display="block";
-            }
-
-            if (value=="Retraité"){
-                document.getElementById('loca_question_7').style.display="block";
-                document.getElementById('loca_question_5').style.display="none";
-                document.getElementById('loca_question_6').style.display="none";
-            }
-        }
-        
-        // afficher les questions suivant le statut
-
-        function showMessage(value){
-            if (value=="CDI hors période d'essai"){
-               document.getElementById('question_number_5').style.display="block";
-               document.getElementById('loca_question_4').style.display="block";
-               document.getElementById('loca_question_2').style.display="block";
-               document.getElementById('loca_question_3').style.display="block";
-               document.getElementById('question_number_6').style.display="none";
-               document.getElementById('question_number_7').style.display="none";
-               document.getElementById('question_number_8').style.display="none";
-               document.getElementById('question_number_9').style.display="none";
-               document.getElementById('question_number_10').style.display="none";
-               document.getElementById('question_number_11').style.display="none";
-               document.getElementById('loca_question_1').style.display="none";
-               document.getElementById('locataire1').style.display="block";
-               document.getElementById('loca_question_5').style.display="none";
-               document.getElementById('loca_question_6').style.display="none";
-            }
-            if (value=="CDI en période d'essaie"){
-                document.getElementById('question_number_5').style.display="none";
-                document.getElementById('loca_question_2').style.display="block";
-               document.getElementById('loca_question_3').style.display="block";
-                document.getElementById('loca_question_4').style.display="block";
-               document.getElementById('question_number_6').style.display="block";
-               document.getElementById('question_number_7').style.display="none";
-               document.getElementById('question_number_8').style.display="none";
-               document.getElementById('question_number_9').style.display="none";
-               document.getElementById('question_number_10').style.display="none";
-               document.getElementById('question_number_11').style.display="none";
-               document.getElementById('loca_question_1').style.display="none";
-               document.getElementById('locataire1').style.display="block";
-               document.getElementById('loca_question_5').style.display="none";
-               document.getElementById('loca_question_6').style.display="none";
-            }
-            if (value=="Étudiant, alternant"){
-                document.getElementById('loca_question_1').style.display="block";
-                document.getElementById('loca_question_2').style.display="block";
-               document.getElementById('loca_question_3').style.display="block";
-                document.getElementById('loca_question_4').style.display="none";
-                document.getElementById('question_number_5').style.display="none";
-               document.getElementById('question_number_6').style.display="none";
-               document.getElementById('question_number_7').style.display="block";
-               document.getElementById('question_number_8').style.display="none";
-               document.getElementById('question_number_9').style.display="none";
-               document.getElementById('question_number_10').style.display="none";
-               document.getElementById('question_number_11').style.display="none";
-               document.getElementById('locataire1').style.display="block";
-               document.getElementById('loca_question_5').style.display="none";
-               document.getElementById('loca_question_6').style.display="none";
-            }
-            if (value=="Fonctionnaire"){
-                document.getElementById('question_number_5').style.display="none";
-                document.getElementById('loca_question_2').style.display="block";
-               document.getElementById('loca_question_3').style.display="block";
-               document.getElementById('question_number_6').style.display="none";
-               document.getElementById('question_number_7').style.display="none";
-               document.getElementById('question_number_8').style.display="block";
-               document.getElementById('question_number_9').style.display="none";
-               document.getElementById('question_number_10').style.display="none";
-               document.getElementById('question_number_11').style.display="none";
-               document.getElementById('loca_question_1').style.display="none";
-               document.getElementById('loca_question_4').style.display="block";
-               document.getElementById('locataire1').style.display="block";
-               document.getElementById('loca_question_5').style.display="none";
-               document.getElementById('loca_question_6').style.display="none";
-            }
-            if (value=="Profession libérale"){
-                document.getElementById('question_number_5').style.display="none";
-                document.getElementById('loca_question_2').style.display="block";
-               document.getElementById('loca_question_3').style.display="block";
-               document.getElementById('question_number_6').style.display="none";
-               document.getElementById('question_number_7').style.display="none";
-               document.getElementById('question_number_8').style.display="none";
-               document.getElementById('question_number_9').style.display="block";
-               document.getElementById('question_number_10').style.display="none";
-               document.getElementById('question_number_11').style.display="none";
-               document.getElementById('loca_question_1').style.display="none";
-               document.getElementById('loca_question_4').style.display="block";
-               document.getElementById('locataire1').style.display="block";
-               document.getElementById('loca_question_5').style.display="block";
-               document.getElementById('loca_question_6').style.display="none";
-            }
-            if (value=="Indépendant"){
-                document.getElementById('question_number_5').style.display="none";
-                document.getElementById('loca_question_2').style.display="block";
-               document.getElementById('loca_question_3').style.display="block";
-               document.getElementById('question_number_6').style.display="none";
-               document.getElementById('question_number_7').style.display="none";
-               document.getElementById('question_number_8').style.display="none";
-               document.getElementById('question_number_9').style.display="block";
-               document.getElementById('question_number_10').style.display="none";
-               document.getElementById('question_number_11').style.display="none";
-               document.getElementById('loca_question_1').style.display="none";
-               document.getElementById('loca_question_4').style.display="block";
-               document.getElementById('locataire1').style.display="block";
-               document.getElementById('loca_question_5').style.display="block";
-               document.getElementById('loca_question_6').style.display="none";
-            }
-            if (value=="Salarié en CDD"){
-                document.getElementById('question_number_5').style.display="none";
-                document.getElementById('loca_question_2').style.display="block";
-               document.getElementById('loca_question_3').style.display="block";
-               document.getElementById('question_number_6').style.display="none";
-               document.getElementById('question_number_7').style.display="none";
-               document.getElementById('question_number_8').style.display="none";
-               document.getElementById('question_number_9').style.display="none";
-               document.getElementById('question_number_10').style.display="none";
-               document.getElementById('question_number_11').style.display="none";
-               document.getElementById('loca_question_1').style.display="none";
-               document.getElementById('loca_question_4').style.display="block";
-               document.getElementById('locataire1').style.display="block";
-               document.getElementById('loca_question_5').style.display="none";
-               document.getElementById('loca_question_6').style.display="block";
-            }
-            if (value=="Intérimaire"){
-                document.getElementById('question_number_5').style.display="none";
-                document.getElementById('loca_question_2').style.display="block";
-               document.getElementById('loca_question_3').style.display="block";
-               document.getElementById('question_number_6').style.display="none";
-               document.getElementById('question_number_7').style.display="none";
-               document.getElementById('question_number_8').style.display="none";
-               document.getElementById('question_number_9').style.display="none";
-               document.getElementById('question_number_10').style.display="block";
-               document.getElementById('question_number_11').style.display="none";
-               document.getElementById('loca_question_1').style.display="none";
-               document.getElementById('loca_question_4').style.display="block";
-               document.getElementById('locataire1').style.display="block";
-               document.getElementById('loca_question_5').style.display="none";
-               document.getElementById('loca_question_6').style.display="none";
-            }
-            if (value=="intermitent du spectacle"){
-                document.getElementById('question_number_5').style.display="none";
-                document.getElementById('loca_question_2').style.display="block";
-               document.getElementById('loca_question_3').style.display="block";
-               document.getElementById('question_number_6').style.display="none";
-               document.getElementById('question_number_7').style.display="none";
-               document.getElementById('question_number_8').style.display="none";
-               document.getElementById('question_number_9').style.display="none";
-               document.getElementById('question_number_10').style.display="block";
-               document.getElementById('question_number_11').style.display="none";
-               document.getElementById('loca_question_1').style.display="none";
-               document.getElementById('loca_question_4').style.display="block";
-               document.getElementById('locataire1').style.display="block";
-               document.getElementById('loca_question_5').style.display="none";
-               document.getElementById('loca_question_6').style.display="none";
-            }
-            if (value=="Retraité"){
-                document.getElementById('question_number_5').style.display="none";
-                document.getElementById('loca_question_2').style.display="block";
-               document.getElementById('loca_question_3').style.display="block";
-               document.getElementById('question_number_6').style.display="none";
-               document.getElementById('question_number_7').style.display="none";
-               document.getElementById('question_number_8').style.display="none";
-               document.getElementById('question_number_9').style.display="none";
-               document.getElementById('question_number_10').style.display="none";
-               document.getElementById('question_number_11').style.display="none";
-               document.getElementById('loca_question_1').style.display="none";
-               document.getElementById('loca_question_4').style.display="block";
-               document.getElementById('locataire1').style.display="block";
-               document.getElementById('loca_question_5').style.display="none";
-               document.getElementById('loca_question_6').style.display="none";
-            }
-            if (value=="Sans emploie"){
-                document.getElementById('question_number_5').style.display="none";
-                document.getElementById('loca_question_2').style.display="block";
-               document.getElementById('loca_question_3').style.display="block";
-               document.getElementById('question_number_6').style.display="none";
-               document.getElementById('question_number_7').style.display="none";
-               document.getElementById('question_number_8').style.display="none";
-               document.getElementById('question_number_9').style.display="none";
-               document.getElementById('question_number_10').style.display="none";
-               document.getElementById('question_number_11').style.display="block";
-               document.getElementById('loca_question_1').style.display="none";
-               document.getElementById('loca_question_4').style.display="block";
-               document.getElementById('locataire1').style.display="block";
-               document.getElementById('loca_question_5').style.display="none";
-               document.getElementById('loca_question_6').style.display="none";
-            }
-        }
-
-
-    </script>
+    <script type="text/javascript" src="{% static '/javascript/javascript.js' %}"></script>
 </body>    
 </html>
 

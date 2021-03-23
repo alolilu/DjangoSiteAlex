@@ -4,12 +4,13 @@ body{
     width: 100vw;
     height: 100vh !important;
     overflow-x: hidden;
+    --main-bg-color: orange;
 }
 
 /* les header */
 
 .header-1{
-    background-color: orange;
+    background-color: var(--main-bg-color);
     height: 5vh;
     display: flex;
     width: 100%;
@@ -110,7 +111,7 @@ body{
 
 .navbar a{
     text-decoration: none;
-    color: orange;
+    color: var(--main-bg-color);
     text-transform: uppercase;
     letter-spacing: 1px;
 }
@@ -234,7 +235,7 @@ body{
 .me-contact{
     border-radius: 20px;
     padding: 10px;
-    background-color: orange;
+    background-color: var(--main-bg-color);
     color: rgb(0, 0, 0);
     font-size: 1em;
     font-weight: 600;
@@ -253,7 +254,7 @@ body{
 }
 
 .footer-2 h5{
-    color: orange;
+    color: var(--main-bg-color);
     margin-top: 70px;
     text-align: center;
     margin-bottom: 30px;
