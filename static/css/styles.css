@@ -4,7 +4,7 @@ body{
     width: 100vw;
     height: 100vh !important;
     overflow-x: hidden;
-    --main-bg-color: orange;
+    --main-bg-color: rgb(111, 0, 255);
 }
 
 /* les header */

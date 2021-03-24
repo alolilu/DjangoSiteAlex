@@ -1,6 +1,6 @@
 body{
     height: fit-content !important;
-    --main-bg-color: orange;
+    --main-bg-color: rgb(111, 0, 255);
 }
 .home{
     width: 100vw;
@@ -115,6 +115,7 @@ body{
     width: 10px;
     text-decoration: none;
     outline: none !important;
+    position: relative;
 }
 
 .oui_non1:hover{
@@ -127,9 +128,14 @@ body{
 .autre_question{
     display: none;
 }
+.autre_question h4{
+    margin-top: 70px !important;
+    margin-bottom: 30px !important;
+}
 .autre_bouton{
     margin-left: 265px;
     margin-right: 265px;
+    margin-bottom: 30px;
 }
 .oui_non:hover{
     transition: 0.2s;
@@ -138,7 +144,7 @@ body{
     border: 2px solid var(--main-bg-color);
 }
 .locataire{
-    margin-top: 20px;
+    margin-top: 80px;
     border: 1px solid var(--main-bg-color);
     padding: 10px;
     display: none;
@@ -369,6 +375,11 @@ body{
 .form_input{
     margin: 10px;
 }
+.form_input1{
+    margin: 10px;
+    /* padding-top: -50px !important; */
+    padding-bottom: 70px;
+}
 .label_form{
     margin: 10px;
     font-size: 1.1em;
@@ -453,7 +464,7 @@ header{
     display: none;
 }
 .autre_question1 p{
-    margin-top: 30px;
+    margin-top: 100px;
     padding: 15px 20px 15px 20px;
     background-color: blanchedalmond;
     font-size: 1.1em;
@@ -521,25 +532,61 @@ header{
     border: 2px solid var(--main-bg-color);
     outline: none;
 }
-#second_icone{
+/* #second_icone{
     display: inline-block;
     position: ;
-}
+} */
 #first_icone{
-    display: none;
     transition: 1s;
+    position: absolute;
+    top: 22px;
+    padding-left: 20px;
+    z-index: 3;
+    display: none;
 }
 #second_icone{
-    display: none;
     transition: 1s;
+    position: absolute;
+    top: 22px;
+    padding-left: 20px;
+    z-index: 3;
+    display: none;
 }
 #third_icone{
-    display: none;
     transition: 1s;
+    position: absolute;
+    top: 22px;
+    padding-left: 20px;
+    z-index: 3;
+    display: none;
 }
 #fourth_icone{
-    display: none;
     transition: 1s;
+    position: absolute;
+    top: 22px;
+    padding-left: 20px;
+    z-index: 3;
+    display: none;
+}
+#non1{
+    position: absolute;
+    width: 70%;
+    padding-left: -50px;
+}
+#oui1{
+    position: absolute;
+    width: 70%;
+    padding-left: -50px;
+}
+#non{
+    position: absolute;
+    width: 70%;
+    padding-left: -50px;
+}
+#oui{
+    position: absolute;
+    width: 70%;
+    padding-left: -50px;
 }
 .les_statuts{
     padding-bottom: 20px;
@@ -675,4 +722,46 @@ header{
     color: var(--main-bg-color);
     cursor: pointer;
     border: 2px solid var(--main-bg-color);
+}
+.acces_compte p{
+    margin: 27px 25px 10px 25px !important;
+    text-align: center;
+}
+
+.acces_compte{
+    display: flex;
+    justify-content: center
+}
+
+.acces_compte a{
+    width: 100%;
+    text-align: center;
+}
+
+.acces_compte button{
+    margin: 0px 0px 20px 0px;
+    border-radius: 10px;
+    border: 2px solid black;
+    outline: none;
+    transition: 0.2s;
+    width: 20%;
+    cursor: pointer;
+    background-color: var(--main-bg-color);
+}
+
+.acces_compte button:hover{
+    margin: 0px 0px 20px 0px;
+    border-radius: 10px;
+    border: 2px solid var(--main-bg-color);
+    outline: none;
+    transition: 0.2s;
+    width: 20%;
+    cursor: pointer;
+    background-color: black;
+    color: var(--main-bg-color);
+}
+
+.acces_compte p:nth-child(2){
+    margin: 25px !important;
+    text-align: center !important;
 }
