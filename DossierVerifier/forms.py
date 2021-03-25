@@ -6,4 +6,4 @@ from django.forms import ModelForm
 class NewDossier(ModelForm):
     class Meta:
         model = NewDossier
-        fields = ['__all__']
+        fields = '__all__'
