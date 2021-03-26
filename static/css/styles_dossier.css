@@ -1,6 +1,6 @@
 body{
     height: fit-content !important;
-    --main-bg-color: rgb(111, 0, 255);
+    --main-bg-color: rgb(0, 89, 255);
 }
 .home{
     width: 100vw;
@@ -33,21 +33,50 @@ body{
 .premier_dossier ul{
     display: flex;
     flex-direction: column;
-    align-content: center;
     list-style: none;
-    padding: 0;
-    padding-top: 100px !important;
+    padding: 0px !important;
+    height: 600px;
 }
-.premier_dossier ul li a{
+
+.premier_dossier ul li{
+    margin: 20px;
+    border: solid 1.5px var(--main-bg-color);
+    padding: 7px 45px 7px 45px;
+    cursor: pointer;
+    background-color: rgba(211, 211, 211, 0.37);
+}
+
+.premier_dossier ul li:hover{
+    border: solid 1.5px var(--main-bg-color);
+    background-color: rgba(136, 136, 136, 0.37);
+}
+
+.premier_dossier button{
+    margin: 80px 0px 0px 0px;
+    padding: 0px 40px 0px 40px;
+    height: 60px;
+    outline: none;
+    border: none;
+    background-color: rgba(148, 148, 148, 0.39);
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+.premier_dossier button:hover{
+    background-color: rgba(85, 85, 85, 0.39);
+    transition: 0.3s;
+}
+
+/* .premier_dossier ul li a{
     text-decoration: none;
     color: var(--main-bg-color);
     padding: 15px 35px 15px 28px;
     font-size: 1.2em;
     transition: 0.3s;
     font-weight: 500;
-}
+} */
+
 .premier_dossier ul li a:hover{
-    background-color: rgba(170, 170, 170, 0.39);
+    background-color: rgba(121, 121, 121, 0.39);
     transition: 0.3s;
     box-sizing: 15px;
 }
@@ -63,7 +92,6 @@ body{
     margin-top: -80px;
     text-transform: uppercase;
     padding-top: 20px;
-    border-bottom: 2px solid rgba(117, 117, 117, 0.541);
     padding-bottom: 20px;
 }
 .question:first-child{
@@ -87,6 +115,7 @@ body{
     flex-direction: row;
     margin: auto;
     width: 30%;
+    margin-bottom: 30px;
 }
 .oui_non{
     margin: 10px;
@@ -365,6 +394,7 @@ body{
 }
 .deuxieme_page{
     display: flex;
+    border-top: 10px solid rgba(117, 117, 117, 0.541); 
 }
 .deuxieme_page p{
     margin-top: 55px;
@@ -377,7 +407,6 @@ body{
 }
 .form_input1{
     margin: 10px;
-    /* padding-top: -50px !important; */
     padding-bottom: 70px;
 }
 .label_form{
@@ -705,7 +734,7 @@ header{
 .demarrer_acceuil ul li{
     margin: 7px 0px 0px 0px;
 }
-.demarrer_acceuil button{
+.bouton_demarrage{
     margin: 50px;
     padding: 5px 30px 5px 30px;
     font-size: 1em;
@@ -713,10 +742,10 @@ header{
     border: 2px solid black;
     outline: none;
     transition: 0.2s;
-    cursor: pointer;
+    cursor: pointer !important;
     background-color: var(--main-bg-color);
 }
-.demarrer_acceuil button:hover{
+.bouton_demarrage:hover{
     background-color: black;
     transition: 0.2s;
     color: var(--main-bg-color);
@@ -765,3 +794,64 @@ header{
     margin: 25px !important;
     text-align: center !important;
 }
+
+.justi_loca_2{
+    display: none;
+    margin-bottom: 30px;
+}
+
+.justi_loca_3{
+    display: none;
+    margin-bottom: 30px;
+}
+
+.justi_loca_4{
+    display: none;
+    margin-bottom: 30px;
+}
+
+.justi_loca_1{
+    margin-bottom: 30px;
+}
+
+#li_2{
+    display: none;
+}
+
+#li_3{
+    display: none;
+}
+
+#li_4{
+    display: none;
+}
+
+#li_5{
+    display: none;
+}
+
+#li_6{
+    display: none;
+}
+
+.supprimer_le_dossier{
+    width: 20% !important;
+    font-size: 0.8em !important;
+    outline: none;
+    border: none;
+    color: white;
+    background-color: red;
+    padding: 10px !important;
+    transition: 0.2s;
+    display: none;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.supprimer_le_dossier:hover{
+    color: red;
+    background-color: rgb(167, 167, 167);
+    transition: 0.2s;
+    cursor: pointer;
+}
+

@@ -45,7 +45,17 @@ def Home_Dossier(request):
         nom_1_loca = request.POST.get('nom_1_loca')
         email_1_loca = request.POST.get('email_1_loca')
         comment_loca_1 = request.POST.get('comment_loca_1')
-        nom_1_loca2 = request.POST.get('nom_1_loca2')
+
+        nom_1_loca_2 = request.POST.get('nom_1_loca_2')
+        email_1_loca_2 = request.POST.get('email_1_loca_2')
+        comment_loca_2 = request.POST.get('comment_loca_2')
+        nom_1_loca_3 = request.POST.get('nom_1_loca_3')
+        email_1_loca_3 = request.POST.get('email_1_loca_3')
+        comment_loca_3 = request.POST.get('comment_loca_3')
+        nom_1_loca_4 = request.POST.get('nom_1_loca_4')
+        email_1_loca_4 = request.POST.get('email_1_loca_4')
+        comment_loca_4 = request.POST.get('comment_loca_4')
+        votre_nom = request.POST.get('votre_nom')
         adresse_logement = request.POST.get('adresse_logement')
         date_signature_bail = request.POST.get('date_signature_bail')
 
@@ -55,7 +65,9 @@ def Home_Dossier(request):
         statut_garant_2=statut_garant_2, revenu_garant2=revenu_garant2,  anciennete2=anciennete2, date_fin_contrat2=date_fin_contrat2, statut_locataire3=statut_locataire3, revenus_du_locataire_3=revenus_du_locataire_3,
         statut_garant_3=statut_garant_3, revenu_garant3=revenu_garant3,  anciennete3=anciennete3, date_fin_contrat3=date_fin_contrat3, statut_locataire4=statut_locataire4, revenus_du_locataire_4=revenus_du_locataire_4,
         statut_garant_4=statut_garant_4, revenu_garant4=revenu_garant4, anciennete4=anciennete4, date_fin_contrat4=date_fin_contrat4, revenus_complement_foyer=revenus_complement_foyer, loyer_mensuel=loyer_mensuel,
-        nom_1_loca=nom_1_loca, email_1_loca=email_1_loca, comment_loca_1=comment_loca_1, nom_1_loca2=nom_1_loca2, adresse_logement=adresse_logement, date_signature_bail=date_signature_bail)
+        nom_1_loca=nom_1_loca, email_1_loca=email_1_loca, comment_loca_1=comment_loca_1, votre_nom=votre_nom, adresse_logement=adresse_logement, date_signature_bail=date_signature_bail, nom_1_loca_2=nom_1_loca_2,
+        email_1_loca_2=email_1_loca_2, comment_loca_2=comment_loca_2, nom_1_loca_3=nom_1_loca_3, email_1_loca_3=email_1_loca_3, comment_loca_3=comment_loca_3, nom_1_loca_4=nom_1_loca_4, email_1_loca_4=email_1_loca_4,
+        comment_loca_4=comment_loca_4)
         dossier.save()
         print('the data has been written to the dbb')
         

@@ -19,15 +19,17 @@
                 <div class="container ajout_dossier">
                     <h3>Dossier locataire</h3>
                         <div class="row premier_dossier">
-                            <ul>
-                                <li><a href="/"><i class="fas fa-plus fa-10px"></i>Ajouter un dossier</a></li>
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                            </ul>
+                            <button type="button" id="ajout_dossier_button"><i class="fas fa-plus fa-10px"></i>Ajouter un dossier</button>
+                            <button type="button" id="ajout_dossier_button1" style="display: none;"><i class="fas fa-plus fa-10px"></i>Ajouter un dossier</button>
+                            <button type="button" id="ajout_dossier_button2" style="display: none;"><i class="fas fa-plus fa-10px"></i>Ajouter un dossier</button>
+                                <ul>
+                                    <li>Dossier 1</li>
+                                    <li id="li_2">Dossier 2</li>
+                                    <li id="li_3">Dossier 3</li>
+                                    <li id="li_4">Dossier 4</li>
+                                    <!-- <li id="li_5">Dossier 5</li>
+                                    <li id="li_6">Dossier 6</li> -->
+                                </ul>
                         </div>
                 </div>
             </div>
@@ -55,14 +57,18 @@
                             <li>Ajouter et valider les justificatifs</li>
                             <li>Récupérer un dossier pdf vous permettant de souscrire</li>
                         </ul>
-                        <h4><button id="bouton_demarrage">Démarrer le dossier locataire</button></h4>
+                        <h4><button id="bouton_demarrage" class="bouton_demarrage">Démarrer le dossier locataire</button></h4>
+                        <button type="button" class="supprimer_le_dossier" id="supprimer_le_dossier"><i class="far fa-trash-alt" style="margin-right: 10px;"></i>Supprimer le dossier</button>
+                        <button type="button" class="supprimer_le_dossier" id="supprimer_le_dossier1" style="display: none;"><i class="far fa-trash-alt" style="margin-right: 10px;"></i>Supprimer le dossier</button>
+                        <button type="button" class="supprimer_le_dossier" id="supprimer_le_dossier2" style="display: none;"><i class="far fa-trash-alt" style="margin-right: 10px;"></i>Supprimer le dossier</button>
+
                     </div>
                     <form style="width: 100%;" class="dossier_formulaire" enctype="multipart/form-data" method="POST">
                         <div class="page">
                             <div class="container-fluid">
                                 <div id="page1">
                                     <h4>Les locataires sont-ils dans les lieux ?</h4>
-                                    <div class="oui_div">
+                                    <div class="oui_div" >
                                         <div class="col">
                                             <i class="fas fa-check" id="first_icone"></i>
                                             <input type="button" id="oui" class="oui_non" value="Oui" name="loca_sont_dans_les_lieux">
@@ -94,9 +100,9 @@
                                         <label for="loca_jour"></label><h4>le locataire est dans les lieux depuis</h4>
                                         <select class="select_jour" name="loca_dans_les_lieux_depuis" onchange="showMe(this.value);">
                                             <option selected="true" style='display: none'>--</option>
-                                            <option value="numberQues1">moins de 14 jours</option>
-                                            <option value="numberQues2">entre 14 jours et 6 mois</option>
-                                            <option value="numberQues3">plus de 6 mois</option>
+                                            <option value="14_jours">moins de 14 jours</option>
+                                            <option value="14jours_6mois">entre 14 jours et 6 mois</option>
+                                            <option value="plus_de_6mois">plus de 6 mois</option>
                                         </select>
                                     </div>
                                 </div>
@@ -123,7 +129,7 @@
                                     </div>
                                     <div class="row" id="loca_question_4">
                                         <label for="Revenus du locataire" class="label_satut">Revenus du locataire</label>
-                                        <input type="number" class="votre_statut" name="revenus_du_locataire_1">
+                                        <input type="number" class="votre_statut" name="revenus_du_locataire_1" value="0">
                                         <span type="" class="votre_statut1">€/mois</span>
                                     </div>
                                     <div class="row" id="loca_question_1">
@@ -141,7 +147,7 @@
                                     </div>
                                     <div class="row" id="loca_question_7">
                                         <label for="Revenus du locataire" class="label_satut">Revenus du garant</label>
-                                        <input type="number" class="votre_statut" name="revenu_garant1">
+                                        <input type="number" class="votre_statut" name="revenu_garant1" value="0">
                                         <button class="votre_statut1">€/mois</button>
                                     </div>
                                     <div class="row" id="loca_question_5">
@@ -185,7 +191,7 @@
                                     </div>
                                     <div class="row" id="loca_question_44">
                                         <label for="Revenus du locataire" class="label_satut">Revenus du locataire</label>
-                                        <input type="number" class="votre_statut" name="revenus_du_locataire_2">
+                                        <input type="number" class="votre_statut" name="revenus_du_locataire_2" value="0">
                                         <button class="votre_statut1">€/mois</button>
                                     </div>
                                     <div class="row" id="loca_question_11">
@@ -203,7 +209,7 @@
                                     </div>
                                     <div class="row" id="loca_question_77">
                                         <label for="Revenus du locataire" class="label_satut">Revenus du garant</label>
-                                        <input type="number" name="revenu_garant2" class="votre_statut">
+                                        <input type="number" name="revenu_garant2" class="votre_statut" value="0">
                                         <button class="votre_statut1">€/mois</button>
                                     </div>
                                     <div class="row" id="loca_question_55">
@@ -247,7 +253,7 @@
                                     </div>
                                     <div class="row" id="loca_question_444">
                                         <label for="Revenus du locataire" class="label_satut">Revenus du locataire</label>
-                                        <input type="number" class="votre_statut" name="revenus_du_locataire_3">
+                                        <input type="number" class="votre_statut" name="revenus_du_locataire_3" value="0">
                                         <button class="votre_statut1">€/mois</button>
                                     </div>
                                     <div class="row" id="loca_question_111">
@@ -265,7 +271,7 @@
                                     </div>
                                     <div class="row" id="loca_question_777">
                                         <label for="Revenus du locataire" class="label_satut">Revenus du garant</label>
-                                        <input type="number" class="votre_statut" name="revenu_garant3">
+                                        <input type="number" class="votre_statut" name="revenu_garant3" value="0">
                                         <button class="votre_statut1">€/mois</button>
                                     </div>
                                     <div class="row" id="loca_question_555">
@@ -309,7 +315,7 @@
                                     </div>
                                     <div class="row" id="loca_question_4444">
                                         <label for="Revenus du locataire" class="label_satut">Revenus du locataire</label>
-                                        <input type="number" class="votre_statut" name="revenus_du_locataire_4">
+                                        <input type="number" class="votre_statut" name="revenus_du_locataire_4" value="0">
                                         <button class="votre_statut1">€/mois</button>
                                     </div>
                                     <div class="row" id="loca_question_1111">
@@ -327,7 +333,7 @@
                                     </div>
                                     <div class="row" id="loca_question_7777">
                                         <label for="Revenus du locataire" class="label_satut">Revenus du garant</label>
-                                        <input type="number" class="votre_statut" name="revenu_garant4">
+                                        <input type="number" class="votre_statut" name="revenu_garant4" value="0">
                                         <button class="votre_statut1">€/mois</button>
                                     </div>
                                     <div class="row" id="loca_question_5555">
@@ -351,12 +357,12 @@
                                 <div class="container-lg" id="locataire1">
                                     <div class="row" id="loca_question_2">
                                         <label for="Revenus complémentaires du foyer" class="label_satut">Revenus complémentaires du foyer :</label>
-                                        <input type="number" class="votre_statut" min="0" max="9999999999" name="revenus_complement_foyer">
+                                        <input type="number" class="votre_statut" value="0" name="revenus_complement_foyer">
                                         <button class="votre_statut1">€/mois</button>
                                     </div>
                                     <div class="row" id="loca_question_3">
                                         <label for="Loyer + charges" class="label_satut">Loyer + charges :</label>
-                                        <input type="number" class="votre_statut" min="0" max="9999999999" placeholder="Loyer mensuel charges comprises" name="loyer_mensuel">
+                                        <input type="number" class="votre_statut" value="0" placeholder="Loyer mensuel charges comprises" name="loyer_mensuel">
                                         <button class="votre_statut1">€/mois</button>
                                     </div>
                                 </div>
@@ -377,7 +383,7 @@
                         </div>
 
                         <div class="page">
-                            <div class="container-fluid" id="page2">
+                            <div class="container-fluid justi_loca_1" id="page2">
                                 <div class="row deuxieme_page">
                                     <h4>Justificatifs locataire 1</h4>
                                     <!-- <p>CDI hors période d'essaie</p> -->
@@ -396,8 +402,7 @@
                                     <div class="col-6">
                                         <div class="row form1">
                                             <label for="Commentaires" class="label_form1">Commentaires :</label>
-                                            <input type="textarea" name="comment_loca_1" class="form_input1">
-                                            <!-- <textarea name="comment" id="" cols="30" rows="1.7" class="form_input"></textarea> -->
+                                            <input type="textarea" name="comment_loca_1" class="form_input1" size="40">
                                         </div>
                                     </div>
                                 </div>
@@ -462,6 +467,261 @@
                                     </div>
                                 </div>
                             </div>
+
+                            <div class="container-fluid justi_loca_2" id="page2">
+                                <div class="row deuxieme_page">
+                                    <h4>Justificatifs locataire 2</h4>
+                                    <!-- <p>CDI hors période d'essaie</p> -->
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="row form1">
+                                            <label for="Nom_locataire" class="label_form">Nom du locataire :</label>
+                                            <input type="text" class="form_input" placeholder="optionnel" name="nom_1_loca_2">
+                                        </div>
+                                        <div class="row form1">
+                                            <label for="Nom_locataire" class="label_form">Email du locataire :</label>
+                                            <input type="text" class="form_input" placeholder="optionnel" name="email_1_loca_2">
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="row form1">
+                                            <label for="Commentaires" class="label_form1">Commentaires :</label>
+                                            <input type="textarea" name="comment_loca_2" class="form_input1" size="40">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col-6 justi">
+                                            <h6>Justificatifs à fournir</h6>
+                                            <ul class="justi_fournir">
+                                                <li><input type="checkbox" class="a_cocher" name="piece_identite_2">Pièce d'identité</li>
+                                                <li><input type="checkbox" class="a_cocher" name="contrat_travail_2">Contrat de travail ou attestation employeur</li>
+                                                <li><input type="checkbox" class="a_cocher" name="bulletin_salaire_fev_2">Bulletin de salaire février</li>
+                                                <li><input type="checkbox" class="a_cocher" name="bulletin_salaire_janv_2">Bulletin de salaire janvier</li>
+                                                <li><input type="checkbox" class="a_cocher" name="bulletin_salaire_dec_2">Bulletin de salaire décembre</li>
+                                                <li><input type="checkbox" class="a_cocher" name="dernier_avis_impot_2">Dernier avis d'impôts</li>
+                                                <li><input type="checkbox" class="a_cocher" name="3_derniere_quittances_de_loyer_2">Trois dernières quittances de loyer ou attestation d'hébergement</li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-6 justi">
+                                            <h6>Justificatifs optionnels</h6>
+                                            <ul class="justi_fournir">
+                                                <li><input type="checkbox" class="a_cocher" name="bulletin_salaire_nov_2">Bulletin de salaire novembre</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="container-fluid" style="margin-top: 25px;">
+                                    <div class="row">
+                                        <div class="col-md-4 ajout_fichier">
+                                            <div class="row">
+                                                <label for="file">1 : Je choisis le fichier</label>
+                                            </div>
+                                            <div class="row">
+                                                <input type="file" style="width: 115px; margin-left: 10px;" name="file_justificatif">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 ajout_fichier">
+                                            <div class="row">
+                                                <label for="type_file">2 : Ce fichier contient</label>
+                                            </div>
+                                            <div class="row">
+                                                <select name="type_fichier" id="">
+                                                    <option selected="true" style='display: none'>--</option>
+                                                    <option value="Pièce d'identité">Pièce d'identité</option>
+                                                    <option value="Contrat de travail">Contrat de travail</option>
+                                                    <option value="Attestation employeur">Attestation employeur</option>
+                                                    <option value="Bulletin de salaire févr">Bulletin de salaire févr</option>
+                                                    <option value="Bulletin de salaire janv">Bulletin de salaire janv</option>
+                                                    <option value="Bulletin de salaire déc">Bulletin de salaire déc</option>
+                                                    <option value="Dernier avis d'impots">Dernier avis d'impots</option>
+                                                    <option value="Trois dernières quittances">Trois dernières quittances</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 ajout_fichier">
+                                            <div class="row">
+                                                <label for="ajouter_file">3 : j'ajoute le fichier</label>
+                                            </div>
+                                            <div class="row">
+                                                <button style="background-color:  var(--main-bg-color);"><i class="fas fa-cloud-upload-alt">Ajouter</i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="container-fluid justi_loca_3" id="page2">
+                                <div class="row deuxieme_page">
+                                    <h4>Justificatifs locataire 3</h4>
+                                    <!-- <p>CDI hors période d'essaie</p> -->
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="row form1">
+                                            <label for="Nom_locataire" class="label_form">Nom du locataire :</label>
+                                            <input type="text" class="form_input" placeholder="optionnel" name="nom_1_loca_3">
+                                        </div>
+                                        <div class="row form1">
+                                            <label for="Nom_locataire" class="label_form">Email du locataire :</label>
+                                            <input type="text" class="form_input" placeholder="optionnel" name="email_1_loca_3">
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="row form1">
+                                            <label for="Commentaires" class="label_form1">Commentaires :</label>
+                                            <input type="textarea" name="comment_loca_3" class="form_input1" size="40">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col-6 justi">
+                                            <h6>Justificatifs à fournir</h6>
+                                            <ul class="justi_fournir">
+                                                <li><input type="checkbox" class="a_cocher" name="piece_identite_3">Pièce d'identité</li>
+                                                <li><input type="checkbox" class="a_cocher" name="contrat_travail_3">Contrat de travail ou attestation employeur</li>
+                                                <li><input type="checkbox" class="a_cocher" name="bulletin_salaire_fev_3">Bulletin de salaire février</li>
+                                                <li><input type="checkbox" class="a_cocher" name="bulletin_salaire_janv_3">Bulletin de salaire janvier</li>
+                                                <li><input type="checkbox" class="a_cocher" name="bulletin_salaire_dec_3">Bulletin de salaire décembre</li>
+                                                <li><input type="checkbox" class="a_cocher" name="dernier_avis_impot_3">Dernier avis d'impôts</li>
+                                                <li><input type="checkbox" class="a_cocher" name="3_derniere_quittances_de_loyer_3">Trois dernières quittances de loyer ou attestation d'hébergement</li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-6 justi">
+                                            <h6>Justificatifs optionnels</h6>
+                                            <ul class="justi_fournir">
+                                                <li><input type="checkbox" class="a_cocher" name="bulletin_salaire_nov_3">Bulletin de salaire novembre</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="container-fluid" style="margin-top: 25px;">
+                                    <div class="row">
+                                        <div class="col-md-4 ajout_fichier">
+                                            <div class="row">
+                                                <label for="file">1 : Je choisis le fichier</label>
+                                            </div>
+                                            <div class="row">
+                                                <input type="file" style="width: 115px; margin-left: 10px;" name="file_justificatif">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 ajout_fichier">
+                                            <div class="row">
+                                                <label for="type_file">2 : Ce fichier contient</label>
+                                            </div>
+                                            <div class="row">
+                                                <select name="type_fichier" id="">
+                                                    <option selected="true" style='display: none'>--</option>
+                                                    <option value="Pièce d'identité">Pièce d'identité</option>
+                                                    <option value="Contrat de travail">Contrat de travail</option>
+                                                    <option value="Attestation employeur">Attestation employeur</option>
+                                                    <option value="Bulletin de salaire févr">Bulletin de salaire févr</option>
+                                                    <option value="Bulletin de salaire janv">Bulletin de salaire janv</option>
+                                                    <option value="Bulletin de salaire déc">Bulletin de salaire déc</option>
+                                                    <option value="Dernier avis d'impots">Dernier avis d'impots</option>
+                                                    <option value="Trois dernières quittances">Trois dernières quittances</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 ajout_fichier">
+                                            <div class="row">
+                                                <label for="ajouter_file">3 : j'ajoute le fichier</label>
+                                            </div>
+                                            <div class="row">
+                                                <button style="background-color:  var(--main-bg-color);"><i class="fas fa-cloud-upload-alt">Ajouter</i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="container-fluid justi_loca_4" id="page2">
+                                <div class="row deuxieme_page">
+                                    <h4>Justificatifs locataire 4</h4>
+                                    <!-- <p>CDI hors période d'essaie</p> -->
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="row form1">
+                                            <label for="Nom_locataire" class="label_form">Nom du locataire :</label>
+                                            <input type="text" class="form_input" placeholder="optionnel" name="nom_1_loca_4">
+                                        </div>
+                                        <div class="row form1">
+                                            <label for="Nom_locataire" class="label_form">Email du locataire :</label>
+                                            <input type="text" class="form_input" placeholder="optionnel" name="email_1_loca_4">
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="row form1">
+                                            <label for="Commentaires" class="label_form1">Commentaires :</label>
+                                            <input type="textarea" name="comment_loca_2" class="form_input1" size="40">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col-6 justi">
+                                            <h6>Justificatifs à fournir</h6>
+                                            <ul class="justi_fournir">
+                                                <li><input type="checkbox" class="a_cocher" name="piece_identite_4">Pièce d'identité</li>
+                                                <li><input type="checkbox" class="a_cocher" name="contrat_travail_4">Contrat de travail ou attestation employeur</li>
+                                                <li><input type="checkbox" class="a_cocher" name="bulletin_salaire_fev_4">Bulletin de salaire février</li>
+                                                <li><input type="checkbox" class="a_cocher" name="bulletin_salaire_janv_4">Bulletin de salaire janvier</li>
+                                                <li><input type="checkbox" class="a_cocher" name="bulletin_salaire_dec_4">Bulletin de salaire décembre</li>
+                                                <li><input type="checkbox" class="a_cocher" name="dernier_avis_impot_4">Dernier avis d'impôts</li>
+                                                <li><input type="checkbox" class="a_cocher" name="3_derniere_quittances_de_loyer_4">Trois dernières quittances de loyer ou attestation d'hébergement</li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-6 justi">
+                                            <h6>Justificatifs optionnels</h6>
+                                            <ul class="justi_fournir">
+                                                <li><input type="checkbox" class="a_cocher" name="bulletin_salaire_nov_4">Bulletin de salaire novembre</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="container-fluid" style="margin-top: 25px;">
+                                    <div class="row">
+                                        <div class="col-md-4 ajout_fichier">
+                                            <div class="row">
+                                                <label for="file">1 : Je choisis le fichier</label>
+                                            </div>
+                                            <div class="row">
+                                                <input type="file" style="width: 115px; margin-left: 10px;" name="file_justificatif">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 ajout_fichier">
+                                            <div class="row">
+                                                <label for="type_file">2 : Ce fichier contient</label>
+                                            </div>
+                                            <div class="row">
+                                                <select name="type_fichier" id="">
+                                                    <option selected="true" style='display: none'>--</option>
+                                                    <option value="Pièce d'identité">Pièce d'identité</option>
+                                                    <option value="Contrat de travail">Contrat de travail</option>
+                                                    <option value="Attestation employeur">Attestation employeur</option>
+                                                    <option value="Bulletin de salaire févr">Bulletin de salaire févr</option>
+                                                    <option value="Bulletin de salaire janv">Bulletin de salaire janv</option>
+                                                    <option value="Bulletin de salaire déc">Bulletin de salaire déc</option>
+                                                    <option value="Dernier avis d'impots">Dernier avis d'impots</option>
+                                                    <option value="Trois dernières quittances">Trois dernières quittances</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 ajout_fichier">
+                                            <div class="row">
+                                                <label for="ajouter_file">3 : j'ajoute le fichier</label>
+                                            </div>
+                                            <div class="row">
+                                                <button style="background-color:  var(--main-bg-color);"><i class="fas fa-cloud-upload-alt">Ajouter</i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         
                         <div class="page" id="page3">
@@ -473,7 +733,7 @@
                                             <label for="adresse_logement" class="dernier_page_label">Votre nom</label>
                                         </div>
                                         <div class="row" style="margin: 5px 0px 5px 10px;">
-                                            <input type="text" class="dernier_input" name="nom_1_loca2">
+                                            <input type="text" class="dernier_input" name="votre_nom">
                                         </div>
                                         <div class="row" style="margin: 5px 0px 5px 10px;">
                                             <label for="adresse_logement" class="dernier_page_label">Adresse du logement</label>
@@ -485,7 +745,7 @@
                                             <label for="Date_signature_bail" class="dernier_page_label">Date de signature prévisionnelle du bail</label>
                                         </div>
                                         <div class="row" style="margin: 5px 0px 5px 10px;">
-                                            <input type="date" class="dernier_input" name="date_signature_bail">
+                                            <input type="date" class="dernier_input" name="date_signature_bail" size="40" maxlength="15" minlength="15">
                                         </div>
                                     </div>
                                     <div class="col-md-6">

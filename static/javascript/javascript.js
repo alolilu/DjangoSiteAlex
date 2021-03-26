@@ -27,6 +27,84 @@ function demarrer_dossier(){
     document.getElementsByClassName('demarrer_acceuil')[0].style.display = 'none';
 }
 
+// ajoutter un dossier
+
+var ajoutter_un_dossier = document.getElementById('ajout_dossier_button');
+
+ajoutter_un_dossier.addEventListener('click', ajoutter_dossier);
+
+function ajoutter_dossier(){
+    document.getElementById('li_2').style.display = "block";
+    document.getElementById('supprimer_le_dossier').style.display = "block";
+    document.getElementById('ajout_dossier_button').style.display = "none";
+    document.getElementById('ajout_dossier_button1').style.display = "block";
+}
+
+// ajoutter un dossier
+
+var ajoutter_un_dossier1 = document.getElementById('ajout_dossier_button1');
+
+ajoutter_un_dossier1.addEventListener('click', ajoutter_dossier1);
+
+function ajoutter_dossier1(){
+    document.getElementById('li_3').style.display = "block";
+    document.getElementById('supprimer_le_dossier').style.display = "none";
+    document.getElementById('supprimer_le_dossier1').style.display = "block";
+    document.getElementById('ajout_dossier_button1').style.display = "none";
+    document.getElementById('ajout_dossier_button2').style.display = "block";
+}
+
+// ajoutter un dossier
+
+var ajoutter_un_dossier2 = document.getElementById('ajout_dossier_button2');
+
+ajoutter_un_dossier2.addEventListener('click', ajoutter_dossier2);
+
+function ajoutter_dossier2(){
+    document.getElementById('li_4').style.display = "block";
+    document.getElementById('supprimer_le_dossier1').style.display = "none";
+    document.getElementById('supprimer_le_dossier2').style.display = "block";
+}
+
+// supprimer un dossier 
+
+var supprimer_un_dossier = document.getElementById('supprimer_le_dossier');
+
+supprimer_un_dossier.addEventListener('click', supprimer_dossier);
+
+function supprimer_dossier(){
+    document.getElementById('supprimer_le_dossier').style.display = "none";
+    document.getElementById('li_2').style.display = "none";
+    document.getElementById('ajout_dossier_button1').style.display = "none";
+    document.getElementById('ajout_dossier_button').style.display = "block";
+    document.getElementById('ajout_dossier_button2').style.display = "none";
+}
+
+// supprimer un dossier 
+
+var supprimer_un_dossier1 = document.getElementById('supprimer_le_dossier1');
+
+supprimer_un_dossier1.addEventListener('click', supprimer_dossier1);
+
+function supprimer_dossier1(){
+    document.getElementById('supprimer_le_dossier1').style.display = "none";
+    document.getElementById('li_3').style.display = "none";
+    document.getElementById('supprimer_le_dossier').style.display = "block";
+}
+
+// supprimer un dossier 
+
+var supprimer_un_dossier2 = document.getElementById('supprimer_le_dossier2');
+
+supprimer_un_dossier2.addEventListener('click', supprimer_dossier2);
+
+function supprimer_dossier2(){
+    document.getElementById('li_4').style.display = "none";
+    document.getElementById('supprimer_le_dossier2').style.display = "none";
+    document.getElementById('supprimer_le_dossier1').style.display = "block";
+    document.getElementById('ajout_dossier_button2').style.display = "block";
+}
+
 //ajout premier locataire
 
 var ajout_loca_bouton = document.getElementById('ajout_locataire');
@@ -38,6 +116,7 @@ function ajouter_le_locataire(){
     document.getElementById('ajout_locataire').style.display="none";
     document.getElementById('ajout_locataire1').style.display="block";
     document.getElementById('supp_locataire').style.display="block";
+    document.getElementsByClassName('justi_loca_2')[0].style.display='block';
 }
 
 //ajout deuxieme locataire
@@ -53,6 +132,7 @@ function ajouter_le_locataire2(){
     document.getElementById('ajout_locataire').style.display="none";
     document.getElementById('ajout_locataire1').style.display="none";
     document.getElementById('ajout_locataire2').style.display="block";
+    document.getElementsByClassName('justi_loca_3')[0].style.display="block";
 }
 
 //ajout troisieme locataire
@@ -68,6 +148,7 @@ function ajouter_le_locataire3(){
     document.getElementById('ajout_locataire2').style.display="none";
     document.getElementById('supp_locataire2').style.display="block";
     document.getElementById('supp_locataire1').style.display="none";
+    document.getElementsByClassName('justi_loca_4')[0].style.display="block";
 }
 
 //supprimer premier locataire
@@ -84,6 +165,7 @@ function supp_le_locataire(){
     document.getElementById('supp_locataire').style.display="none";
     document.getElementById('ajout_locataire').style.display="block";
     document.getElementById('ajout_locataire1').style.display="none";
+    document.getElementsByClassName('justi_loca_2')[0].style.display="none";
 }
 
 //supprimer dexuieme locataire
@@ -100,6 +182,7 @@ function supp_le_locataire2(){
     document.getElementById('ajout_locataire2').style.display="none";
     document.getElementById('supp_locataire1').style.display="none";
     document.getElementById('supp_locataire2').style.display="none";
+    document.getElementsByClassName('justi_loca_3')[0].style.display="none";
 }
 
 //supprimer troisieme locataire
@@ -113,6 +196,7 @@ function supp_le_locataire3(){
     document.getElementById('ajout_locataire1').style.display="block";
     document.getElementById('supp_locataire1').style.display="block";
     document.getElementById('ajout_loca3').style.display="none";
+    document.getElementsByClassName('justi_loca_4')[0].style.display="none";
 }
 
 // bouton principal oui et non 
@@ -196,7 +280,7 @@ function afficher_les_jours(){
 // afficher les questions suivant le select
 
 function showMe(value){
-    if (value=="numberQues1"){
+    if (value=="14_jours"){
         document.getElementById('question_number_1').style.display="block";
         document.getElementById('question_number_4').style.display="block";
         document.getElementById('question_number_2').style.display="none";
@@ -205,7 +289,7 @@ function showMe(value){
         document.getElementById('lancer_test').style.display="block";
     }
 
-    if (value=="numberQues2"){
+    if (value=="14jours_6mois"){
         document.getElementById('question_number_2').style.display="none";
         document.getElementById('question_number_3').style.display="block";
         document.getElementById('question_number_1').style.display="none";
@@ -213,7 +297,7 @@ function showMe(value){
         document.getElementsByClassName('locataire')[0].style.display = 'none';
     }
 
-    if (value=="numberQues3"){
+    if (value=="plus_de_6mois"){
         document.getElementById('question_number_3').style.display="block";
         document.getElementById('question_number_1').style.display="none";
         document.getElementById('question_number_4').style.display="none";
