@@ -7,7 +7,7 @@ from django.forms import ModelForm
 class NewFile(ModelForm):
     class Meta:
         model = File
-        fields = ['s_name', 'f_name', 'mail', 'File']
+        fields = ['s_name', 'f_name', 'mail', 'my_file']
 
 class UpdateFile(ModelForm):
     class Meta:

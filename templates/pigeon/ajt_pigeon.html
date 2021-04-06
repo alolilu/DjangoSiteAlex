@@ -3,6 +3,64 @@
 {% block contenu %}
 
     {% load static %}
+    
+    <style>
+        .text_name{
+            font-size: 1.2em;
+            margin: 20px 0px 5px 30px;
+        }
+        .input_name{
+            width: 15%;
+            margin: 5px 0px 10px 41px;
+            border-radius: 7px;
+            background-color: var(--main-bg-color);
+            color: white;
+            border: none;
+            outline: none;
+        }
+        .input_des{
+            width: 70%;
+            margin: 5px 0px 10px 41px;
+            border-radius: 7px;
+            background-color: var(--main-bg-color);
+            color: white;
+            border: none;
+            outline: none;
+        }
+        .input_prix{
+            width: 7%;
+            margin: 5px 0px 10px 41px;
+            border-radius: 7px;
+            background-color: var(--main-bg-color);
+            color: white;
+            border: none;
+            outline: none;
+        }
+        .input_img{
+            margin: 5px 10px 10px 41px;
+            border-radius: 7px;
+            background-color: var(--main-bg-color);
+            color: white;
+            border: none;
+            outline: none;
+            width: 25%;
+        }
+        .submit_pigeon{
+            width: 20%;
+            text-align: center;
+            background-color: rgb(255, 255, 255);
+            color: var(--main-bg-color);
+            border: 1px solid var(--main-bg-color);
+            outline: none;
+            margin: 30px 0px 0px 50px;
+            transition: 0.3s;
+        }
+        .submit_pigeon:hover{
+            color: white;
+            background-color: var(--main-bg-color);
+            transition: 0.3s;
+        }
+    </style>
 
     <form enctype="multipart/form-data" action="" method="POST">
         {% csrf_token %}
@@ -11,25 +69,25 @@
             <h1>Ajouter un pigeon</h1>
                 <div class="container-fluid formulaire">
                     <div class="row">
-                        <label name="nom_pigeon" class="text" for="fname">Nom du pigeon</label>
-                        <input name="nom_pigeon" type="text" id="form">
+                        <label name="nom_pigeon" class="text_name" for="fname">Nom du pigeon</label>
+                        <input name="nom_pigeon" type="input" id="form" class="input_name">
                     </div>
                     <div class="row">
-                        <label name="des_pigeon" class="text" for="sname">Description du pigeon</label>
-                        <input name="des_pigeon" type="text" id="form">
+                        <label name="des_pigeon" class="text_name" for="sname">Description du pigeon</label>
+                        <input name="des_pigeon" type="text" id="form" class="input_des">
                     </div>
                     <div class="row">
-                        <label name="des_pigeon" class="text" for="sname">Prix du pigeon</label>
-                        <input name="prix_pigeon" type="number" id="form">
+                        <label name="des_pigeon" class="text_name" for="sname">Prix du pigeon</label>
+                        <input name="prix_pigeon" type="number" id="form" class="input_prix">
                     </div>
                     <div class="row">
-                        <label name="img_pigeon" class="text" id="file" for="img_pigeon">Image du pigeon</label>
+                        <label name="img_pigeon" class="text_name" id="file" for="img_pigeon">Image du pigeon</label>
                     </div>
                     <div class="row">
-                        <input name="img_pigeon" type="file" id="form1">
+                        <input name="img_pigeon" type="file" id="form1" class="input_img">
                     </div>
                     <div class="row">
-                        <input type="submit" value="Ajouter le pigeon" class="submit">
+                        <input type="submit" value="Ajouter le pigeon" class="submit_pigeon">
                     </div>
                 </div>
         </div>

@@ -11,38 +11,42 @@ from .models import File
 @login_required(login_url='login')
 
 def workflow(request):
+    global contentFile
     form = NewFile(request.POST or None)
+    # if request.method == 'POST':
+    #     form.save()
     if request.method == 'POST':
-        form.save()
+        f_name = request.POST.get('f_name')
+        s_name = request.POST.get('s_name')
+        mail = request.POST.get('mail')
+        my_file = request.FILES['my_file']
+        contentFile = my_file.read()
 
-        if request.method == 'POST':
-            f_name = request.POST.get('f_name')
-            s_name = request.POST.get('s_name')
-            mail = request.POST.get('mail')
-            file = request.FILES['file']
+        saluttoi = File(f_name=f_name, s_name=s_name, mail=mail, my_file=my_file)
+        saluttoi.save()
 
-            data = {
-                'f_name': f_name,
-                's_name': s_name,
-                'mail': mail,
-                'file': file,
-            }
+        data = {
+            'f_name': f_name,
+            's_name': s_name,
+            'mail': mail,
+            'my_file': my_file,
+        }
 
-            message = '''
-                New customer: {} {}
+        message = '''
+            New customer: {} {}
 
-                Hello,
-                Here the message with a folder of our customer.
-                Thank you for taking care of it.
-                Click on the link for send your verdict:
-                http://127.0.0.1:8000/workflow/workrep
-                Have nice day
+            Hello,
+            Here the message with a folder of our customer.
+            Thank you for taking care of it.
+            Click on the link for send your verdict:
+            http://127.0.0.1:8000/workflow/workrep
+            Have nice day
 
-                His folder: {}
+            His folder: {}
 
-                From: {}
-                '''.format(data['f_name'],data['s_name'], data['file'], data['mail'])
-            send_mail(data['f_name'], message, '', ['alexis.fredriksen5@gmail.com'])
+            From: {}
+            '''.format(data['f_name'],data['s_name'], data['my_file'], data['mail'])
+        send_mail(data['f_name'], message, '', ['alexis.fredriksen5@gmail.com'])
 
     context = {'form': form}
 

@@ -404,6 +404,7 @@ body{
 }
 .form_input{
     margin: 10px;
+    float: right;
 }
 .form_input1{
     margin: 10px;

@@ -145,4 +145,6 @@ STATIC_URL = '/static/'
 
 MEDIA_URL = '/bg/'
 
+MEDIA_URL = '/fichier/'
+
 

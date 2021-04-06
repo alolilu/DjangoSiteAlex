@@ -162,7 +162,7 @@ body{
 
     animation-name: animate;
     animation-direction: normal;
-    animation-duration: 60s;
+    animation-duration: 15s infinite;
     animation-fill-mode: none;
     animation-iteration-count: infinite;
     animation-play-state: running;
@@ -173,11 +173,23 @@ body{
     0%{
         background-image: url("../bg/bgimg.jpg");
     }
+    30%{
+        background-image: url("../bg/bgimg.jpg");
+    }
     33%{
+        background-image: url("../bg/bgimg1.jpg");
+    }
+    63%{
         background-image: url("../bg/bgimg1.jpg");
     }
     66%{
         background-image: url("../bg/bgimg2.jpg");
+    }
+    97%{
+        background-image: url("../bg/bgimg2.jpg");
+    }
+    100%{
+        background-image: url("../bg/bgimg.jpg");
     }
 }
 

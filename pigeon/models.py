@@ -6,5 +6,5 @@ from django.db import models
 class NewPigeon(models.Model):
     nom_pigeon = models.CharField(max_length=30)
     des_pigeon = models.CharField(max_length=300)
-    img_pigeon = models.ImageField(max_length=30)
+    img_pigeon = models.FileField()
     prix_pigeon = models.FloatField(max_length=30)
