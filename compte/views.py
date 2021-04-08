@@ -6,7 +6,7 @@ from django.contrib import messages
 
 # Create your views here.
 
-def inscriptionPage(request):
+def inscriptionPage  (request):
     form=CreerUtilisateur()
     if request.method=='POST':
         form = CreerUtilisateur(request.POST)
@@ -18,11 +18,11 @@ def inscriptionPage(request):
     context={'form' : form }
     return render(request, 'compte/inscription.html', context)
 
-def loginPage(request):
+def loginPage (request):
     context = {}
     if request.method=='POST':
-        username=request.POST.get('username')
-        password=request.POST.get('password')
+        username= request.POST.get('username')
+        password= request.POST.get('password')
         user=authenticate(request,username=username, password=password)
         if user is not None:
             login(request, user)

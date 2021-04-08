@@ -15,7 +15,7 @@ class UserManager(BaseUserManager):
         user.save()
 
     
-    def create_superuser(self, username, email, password=None):
+    def create_superuser (self, username, email, password=None):
         if password is None:
             raise TypeError('Password should not be none')
         
@@ -34,8 +34,8 @@ class User(AbstractBaseUser, PermissionsMixin):
     created_at=models.DateTimeField(auto_now_add=True)
     updated_at=models.DateTimeField(auto_now=True)
 
-    USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = ['username']
+    USERNAME_FIELD = 'username'
+    REQUIRED_FIELDS = ['email']
 
     objects = UserManager()
 

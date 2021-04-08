@@ -1,11 +1,11 @@
 from django.db import models
-from compte.models import User
-from django.conf import settings
+# from compte.models import User
+from django.conf import settings  
 
 # Create your models here.
 
 class NewDossier(models.Model):
-    User=models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=False)
+    # User=models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=False)
 
 
     # les questions 
