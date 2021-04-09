@@ -25,7 +25,7 @@ class UserManager(BaseUserManager):
         user.is_staff = True
         user.save()
 
-class User(AbstractBaseUser, PermissionsMixin):
+class Account(AbstractBaseUser, PermissionsMixin):
     username=models.CharField(max_length=255, unique=True, db_index=True)
     email=models.EmailField(max_length=255, unique=True, db_index=True)
     is_verified = models.BooleanField(default=False)
